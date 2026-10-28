@@ -9,7 +9,17 @@
 ![Java](https://img.shields.io/badge/Java-RuneLite%20plugin-ED8B00?logo=openjdk&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-769%20Python%20%2B%2050%20Java-2EA44F)
 
-> *"What do I need to start Monkey Madness II?"*, then *"¿y si no tengo el m'speak amulet?"*: the agent resolves the follow-up from the conversation, answers in Spanish from English wiki pages, checks the player's finished quests and skill levels, and cites the pages it used.
+![The OSRS Agent panel inside RuneLite, answering with the player's real skill levels](docs/media/in-game.jpg)
+
+## Demo
+
+<p align="center">
+  <img src="docs/media/demo.gif" alt="Asking the agent whether the character can start Monkey Madness II" width="480">
+</p>
+
+*"Can I start Monkey Madness II?"* The plugin sends the character's live state along with the question. The answer lists exactly which skills fall short (*Crafting 63, need 70: 7 levels short*), which prerequisite quests are not started and in what order to do them, and cites the wiki page it used. The levels in the answer match the skills panel on the left. The wait while the agent thinks is sped up 4×; real latency is in the table below.
+
+Follow-ups work the same way. Ask *"¿y si no tengo el m'speak amulet?"* after a question, and the agent resolves it from the conversation and answers in Spanish from English wiki pages.
 
 ## Results
 
