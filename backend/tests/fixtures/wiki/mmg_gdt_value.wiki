@@ -1,0 +1,93 @@
+<!-- title: Money making guide/Killing Amoxliatl -->
+{{Mmgtable
+|Activity = Killing [[Amoxliatl]]
+|Image = [[File:Fighting Amoxliatl.png|300px]]
+|Skill =
+* {{SCP|Slayer|48}}
+* {{SCP|Attack|60+}}
+* {{SCP|Strength|60+}}
+* {{SCP|Prayer|37+}} for [[Protect from magic]]
+|Item =
+* '''For recommended equipment, see this page:'''
+* [[Amoxliatl/Strategies#Equipment|Amoxliatl Strategy (Equipment)]]
+* [[Food]], [[Super combat potion|Combat boosting potions]], [[Prayer potions]]
+|Quest = [[The Heart of Darkness]]
+|Other = 
+* [[King's Ransom]] to use [[Piety]] ({{SCP|Prayer|70+}})
+* [[Pendant of Ates]] to quickly access the [[Ruins of Tapoyauik]]
+|Experience1 = Combat
+|Experience1num = 520 * 4 * 1.05
+|Experience2 = Hitpoints
+|Experience2num = 520 * 4/3 * 1.05
+|isperkill = y
+|kph = 40
+|Input1 = Super attack(4)
+|Input1num = 3
+|Input1isph = y
+|Input2 = Super strength(4)
+|Input2num = 3
+|Input2isph = y
+|Input3 = Prayer potion(4)
+|Input3num = 12
+|Input3isph = y
+|Input4 = {{Cheap food}}
+|Input4num = 20
+|Input4isph = y
+|Output1 = Glacial temotli
+|Output1num = 1 * (1/100)
+|Output2 = Pendant of Ates (inert)
+|Output2num = 1 * (1/25)
+|Output2value = {{#expr:({{GEP|Frozen tear}})*100}}
+|Output3 = Frozen tear
+|Output3num = 5.55
+|Output4 = Rune mace
+|Output4num = 2 * (2/58)
+|Output5 = Rune pickaxe
+|Output5num = 2 * 2/58
+|Output6 = Rune platebody
+|Output6num = 2 * 1/58
+|Output7 = Rune platelegs
+|Output7num = 2 * 1/58
+|Output8 = Water rune
+|Output8num = 300 * 2 * 5/58
+|Output9 = Chaos rune
+|Output9num = 45 * 2 * 4/58
+|Output10 = Death rune
+|Output10num = 30 * 2 * 4/58
+|Output11 = Blood rune
+|Output11num = 22.5 * 2 * 4/58
+|Output12 = Soul rune
+|Output12num = 37.5 * 2 * 4/58
+|Output13 = Nature rune
+|Output13num = 45 * 2 * 3/58
+|Output14 = Coal
+|Output14num = 25 * 2 * 5/58
+|Output15 = Gold ore
+|Output15num = 25 * 2 * 5/58
+|Output16 = Adamantite ore
+|Output16num = 7.5 * 2 * 4/58
+|Output17 = Prayer potion(3)
+|Output17num = 1 * 2 * 2/58
+|Output18 = Runite ore
+|Output18num = 1 * 2 * 2/58
+|Output19 = Water orb
+|Output19num = 15 * 2 * 2/58
+|Output20= Water talisman
+|Output20num = 1 * 2 * 2/58
+|Output21= 	Huasca seed
+|Output21num = 1 * 2 * 1/58
+|Output22= Gem drop table
+|Output22num = 1 * 2/58
+|Output22value = {{GDTValue}}
+|Location = [[Ruins of Tapoyauik]]
+|Category = Combat/Mid
+|Members = Yes
+|Intensity = Moderate
+|Details = 
+The profit rate assumes {{#var:kph}} kills per hour. Your actual profits may be higher or lower depending on your speed and luck. 65+ KPH can be achieved with best in slot equipment.
+
+Use your best available crush weapon with strength and prayer boosting gear.
+
+See the [[Amoxliatl]] article and its [[Amoxliatl/Strategies|strategies sub-page]] for information on killing Amoxliatl.
+}}
+{{Money making}}

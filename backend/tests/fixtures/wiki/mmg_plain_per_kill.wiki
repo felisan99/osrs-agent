@@ -1,0 +1,49 @@
+<!-- title: Money making guide/Aerial fishing -->
+{{Mmgtable
+|Activity = [[Aerial fishing]] for [[Shark lures]]
+|Image = 
+|Skill =
+* {{SCP|Fishing|43}} (99 recommended)
+* {{SCP|Hunter|35}} (99 recommended)
+|Item =
+* [[Fish offcuts]], or ability to consume fish unlocked for 20 [[Molch pearls]]
+* [[Knife]] (optional)
+|Quest =
+* None
+|Intensity = High
+|Other =
+* None
+|Other Benefits = {{SCP|Fishing}} Varies, {{SCP|Hunter}} Varies (see [[Aerial fishing]] for more details)
+|kph= 2200
+|kph name = Creatures caught per hour
+|isperkill = y
+|Input1 = Fish offcuts
+|Input1num = .286
+|Input1isph = N
+|Input1value = {{GEP|Fish offcuts}}
+|Output1 = Shark lure
+|Output1note = (using Molch pearls to buy shark lure packs)
+|Output1num = 2.0
+|Location = [[Molch lake]]
+|Category = Skilling
+|SkillCategory = Fishing, Hunter
+|Members = Yes
+|Details = [[Aerial fishing]] is an activity in [[Lake Molch]] that rewards the player with [[Molch pearls]] in addition to a high amount of fishing and hunter experience. Each Molch pearl can be used to purchase a [[shark lure pack]] from [[Alry the Angler's Angling Accessories]], which contains 100 [[shark lure]]s.
+
+To reach the island in the centre of Lake Molch, the player must take a [[Boaty|boat]] at one of the three docks located on the northern, western, and eastern shores of the lake.
+
+*To reach the northern or eastern dock the player can use [[fairy ring]] {{Fairycode|DJR}} to the [[Chasm of Fire]] and either run south-west for the eastern dock or west for the northern dock.
+*To reach the eastern dock, the player can teleport to [[Shayzien]] using [[Kharedst's memoirs]] or the [[Book of the Dead]] and run west.
+*To reach the western dock, the player can use a [[skills necklace]] to teleport to the [[Farming Guild]] and run south-east through [[Molch]].
+*To reach the eastern dock, the player can use any [[Rada's blessing]] to teleport to the [[Kourend Woodland]], then travel to <code>C: Shayzien West</code> using the nearby [[Lovakengj Minecart Network]].
+
+To begin catching creatures, speak to [[Alry the Angler]] to obtain a [[cormorant]], which requires the player to have their weapon, shield, and hand slots empty. The player can then catch creatures to obtain Molch pearls approximately every 50-66 catches, depending on their fishing and hunter levels. Players with higher fishing and higher hunter levels are more likely to receive Molch pearls (see the Molch pearl page for a calculator).
+
+Aerial fishing requires bait, with one bait being used every 3 to 4 creatures. [[Fish offcuts]] are recommended to catch creatures. 20 Molch pearls can be used to unlock the ability for the [[cormorant]] to consume fish instead of needing bait. Alternatively, the player can bring a knife to cut fish to make their own fish offcuts, providing a token amount of cooking experience. However, cutting fish is not recommended, as doing so will generally lower the number of creatures caught per hour.
+
+With an efficient catch strategy and almost no ticks between catches, approximately 2200 creatures can be caught per hour, resulting in roughly 44 Molch pearls (and thus 4,400 shark lures) per hour at 99 Fishing and Hunter.
+
+A general strategy to quickly catch creatures is to prioritize the fishing spots closest to the player, with fishing spots within 2 tiles of the player taking 1 tick to catch, spots 3-4 tiles from the player taking 2 ticks to catch, and spots 5 tiles from the player taking 3 ticks to catch. Fishing spots further than 5 tiles from the player should only be caught from if no closer spots are available to fish from. Occasionally, a catch will result in a spot becoming frenzied. Sending the cormorant to a frenzied fishing spot will repeatedly catch fish every 3 ticks until it is depleted; frenzied spots should always be prioritized unless there is a fishing spot within 4 tiles of the player.
+}}
+
+{{Money making}}

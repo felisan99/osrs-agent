@@ -1,0 +1,117 @@
+<!-- title: Dragon Slayer II -->
+{{External|rs}}
+{{Has quick guide|speedrun=1}}
+{{Infobox Quest
+|name = Dragon Slayer II
+|number = 136
+|image = [[File:Dragon Slayer II.png|300px]]
+|release = [[4 January]] [[2018]]
+|update = Dragon Slayer II
+|members = Yes
+|series = [[Quests/Series#Dragonkin|Dragonkin]], #3
+|developer = [[Mod Ed]]
+}}
+[[File:Dragon Slayer II logo.png|left|130px]]
+'''Dragon Slayer II: The Legacy of Elvarg''' is a [[quest]] that was released on [[4 January]] [[2018]]. It was announced during [[RuneFest|RuneFest 2017]], and is a sequel to the original [[Dragon Slayer I]] quest, which was released in 2001. Following the player's defeat of [[Elvarg]], [[Crandor]] is now (fairly) safe to investigate; one such researcher, [[Dallas Jones]], seeks to investigate Elvarg's lair in hopes of uncovering the mystery behind her attack on the island.
+{{clear|left}}
+
+==Details==
+{{Quest details
+|start = Talk to [[Alec Kincade]] outside the [[Myths' Guild]].
+|startmap = 2457,2868
+|difficulty = Grandmaster
+|description = 30 years prior to the fateful day a mighty adventurer awakened Elvarg from her slumber, Crandor was a thriving and very much alive island, with a great tradition of mages and adventurers. The history of Crandor is a bold one, enough so that many a Crandorian earned the right to be part of the Champions' Guild! The Crandor we know today is very different from that of the past and there are so many questions that remain unanswered - your chance to uncover the secrets of the past starts with Dragon Slayer II.
+|length = Very Long
+|requirements = *{{SCP|Quest|200|link=yes}} {{Questreqstart|yes}}
+*{{SCP|Magic|75|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Smithing|70|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Mining|68|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Crafting|62|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Agility|60|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Thieving|60|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Construction|50|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*{{SCP|Hitpoints|50|link=yes}} {{Boostable|no}} {{Questreqstart|yes}}
+*Completion of the following quests:
+**[[Legends' Quest]]
+***[[Family Crest]]
+***[[Heroes' Quest]]
+****[[Shield of Arrav]]
+****[[Lost City]]
+****[[Merlin's Crystal]]
+****[[Dragon Slayer I]]
+***[[Underground Pass]]
+****[[Biohazard]]
+*****[[Plague City]]
+***[[Waterfall Quest]]
+**[[Dream Mentor]]
+***[[Lunar Diplomacy]]
+****[[The Fremennik Trials]]
+****[[Rune Mysteries]]
+****[[Shilo Village]]
+*****[[Jungle Potion]]
+***[[Eadgar's Ruse]]
+****[[Druidic Ritual]]
+****[[Troll Stronghold]]
+*****[[Death Plateau]]
+**[[A Tail of Two Cats]]
+***[[Icthlarin's Little Helper]]
+****[[Gertrude's Cat]]
+**[[Animal Magnetism]]
+***[[Ernest the Chicken]]
+***[[Priest in Peril]]
+***[[The Restless Ghost]]
+**[[Ghosts Ahoy]]
+**[[Bone Voyage]]
+***[[The Dig Site]]
+***100 [[Kudos]]
+**[[Client of Kourend]]
+***[[X Marks the Spot]]
+*Started the [[Barbarian_Training#Pyre_ships|pyre ship]] portion of the [[Barbarian Training]] [[miniquest]] to gain access to the [[Ancient Cavern]]
+|items = *A [[pickaxe]]
+*An [[axe]]
+*8 [[oak plank]]s
+*10 [[swamp paste]]
+*At least 12 [[nail]]s of any kind ('''Note:''' Bringing more is recommended; nails may bend!)
+*A [[hammer]]
+*A [[machete]]
+*A [[saw]]
+*[[Catspeak amulet]]
+*[[Ghostspeak amulet]] ([[Morytania Legs 2]]+ work)
+*[[Goutweed]]
+*Cut [[dragonstone]]
+*2 [[molten glass]]
+*[[Glassblowing pipe]]
+*[[Spade]]
+*[[Astral rune]]
+*[[Seal of Passage]] (or [[elite Fremennik Diary]] completion)
+*[[Tinderbox]]
+*[[Pestle and mortar]]
+*Runes for 3 [[Fire Wave]] spells '''or''' 3 [[Fire Surge]] spells
+|recommended = * {{SCP|Combat|100|link=yes}} (at least {{SCP|Ranged|75|link=yes}} strongly recommended)
+*Higher [[Agility]] level to reduce chance of failure during the ship portion of the quest. 
+*[[Prayer]] level to use at least protection prayers.
+*[[Stamina potion]]s
+*[[Serpentine helm]] or [[anti-venom+]]
+*Teleports to various places around the game, most notably [[Musa Point]], [[Fossil Island]], [[Lunar Isle]], and [[Rellekka]] as well as access to [[Spirit tree]]s and [[Glider]] transport.
+*[[Insulated boots]]
+*High-tier [[combat]] equipment, high-healing [[food]], and [[prayer potions]]
+|kills = *[[Vorkath]] ''(level 392)''
+*[[Spawn (Dragon Slayer II)|Spawn]] ''(level 100)''
+*[[Robert the Strong]] '' (level 224) ''
+*2 [[Green dragon]] ''(level 79)''
+*2 [[Blue dragon]] ''(level 111)''
+*[[Red dragon]] ''(level 152)''
+*[[Iron dragon]] ''(level 189)''
+*[[Brutal green dragon]] ''(level 227)''
+*[[Black dragon]] ''(level 227)''
+*[[Steel dragon]] ''(level 246)''
+*[[Brutal red dragon]] ''(level 289)''
+*[[Mithril dragon]] ''(level 304)''
+*[[Adamant dragon]] ''(level 338)''
+*[[Rune dragon]] ''(level 380)''
+*[[Galvek]] ''(level 608)''
+|leagueRegion = <poem>
+Unlocking {{LeagueRegion|Fremennik}} {{okay}} will auto-complete the quest
+Unlocking {{LeagueRegion|Kandarin}} {{okay}} will auto-complete the quest
+</poem>
+}}

@@ -1,0 +1,162 @@
+<!-- title: Abyssal whip -->
+{{External|rs|dw=Abyssal Whip}}
+{{Infobox Item
+|name = Abyssal whip
+|image = [[File:Abyssal whip.png]]
+|release = [[15 February]] [[2005]]
+|update = Ghosts Ahoy and Slayer Update
+|members = Yes
+|quest = No
+|tradeable = Yes
+|equipable = Yes
+|stackable = No
+|noteable = Yes
+|options = Wield, Drop
+|examine = A weapon from the Abyss.
+|value = 120001
+|weight = 0.453
+|exchange = Yes
+|id = 4151
+|leagueRegion = General,Kourend,Misthalin,Morytania,Wilderness
+}}
+[[File:Abyssal whip detail.png|130px|left]]
+The '''abyssal whip''' is a one-handed [[melee weapon]] which requires an [[Attack]] level of 70 to wield. It can be obtained as a drop from [[abyssal demon]]s or from sacrificing an [[unsired]].
+
+The whip is among the most powerful and popular non-degradable melee weapons and is capable of attacking at the same speed of [[daggers]] and [[scimitars]] at 2.4 seconds per hit. As it performs great against monsters that are weak to [[Attack types|slash]] attacks and is relatively affordable, it is one of the most widely used melee weapons in the game and is a popular choice used to train the [[Slayer]] skill at higher combat levels before more powerful weapons become accessible.
+
+While still less powerful than other weapons such as the [[Ghrazi rapier]] and [[blade of Saeldor]], the whip is still very popular among players for its simplicity and cost. It is a good training weapon for those wishing to increase their [[Attack]] or [[Defence]], but not [[Strength]], as the "Lash" option only provides shared experience between all three styles. Though it falls off compared to other weapons when they are obtained, holding a whip is recommended for the purpose of Master [[Treasure Trails]], in which two potential steps require a whip.
+
+==Combat stats==
+{{Infobox Bonuses
+|astab = 0
+|aslash = +82
+|acrush = 0
+|amagic = 0
+|arange = 0
+|dstab = 0
+|dslash = 0
+|dcrush = 0
+|dmagic = 0
+|drange = 0
+|str = +82
+|rstr = 0
+|mdmg = 0
+|prayer = 0
+|slot = weapon
+|speed = 4
+|attackrange = 1
+|combatstyle = Whip
+|image = [[File:Abyssal whip equipped male.png|150px]]
+|altimage = [[File:Abyssal whip equipped female.png|150px]]
+}}
+
+{{CombatStyles|Whip|speed=4|attackrange=1}}
+
+==Special attack==
+[[File:Energy Drain.gif|frame|A player performing the abyssal whip's special attack, ''Energy drain''.]]
+The abyssal whip has a [[special attack]], ''Energy Drain'', which consumes 50% of the player's special attack energy, increases accuracy by 25%, and in [[Player killing|PvP]], transfers 10% of the target's run energy to the wielder. The target player will receive the message, "You feel drained!" in their chat window. The accuracy roll for ''Energy Drain'' is made against an opponent's slash defence.{{CiteTwitter|author=Mod Ash|url=https://twitter.com/JagexAsh/status/904101556034920449|date=2 September 2017|archiveurl=https://reldo.runescape.wiki/i/103702|archivedate=24 December 2022|quote=[Are whip & dscim spec tooltips correct? Supposedly more accurate, but my experience has been exactly the opposite. (...)] Both have a 25% accuracy buff, rolling against your opponent's effective slash defence.}}
+
+==Upgrading==
+Players can attach a [[kraken tentacle]] to the abyssal whip to create an [[abyssal tentacle]], which requires an [[Attack]] level of 75 and has +8 higher [[slash]] attack and +4 higher [[Strength#Strength bonus|Strength bonus]], equating to about 1 higher damage. This process, however, will cause the whip to be consumed, and cannot be undone. Once the abyssal tentacle consumes all of its 10,000 charges, the player will retain the kraken tentacle.
+
+{{Infotable Bonuses|Abyssal whip|Abyssal tentacle|nototals=yes}}
+
+Furthermore, using a [[Shattered relics variety ornament kit]] on an abyssal whip will change its appearance into that of an [[abyssal whip (or)]]. Players can also use either a [[volcanic whip mix|volcanic]] or [[frozen whip mix]], obtained from [[Justine's stuff for the Last Shopper Standing]] to cosmetically enhance the abyssal whip, creating a [[volcanic abyssal whip]] or a [[frozen abyssal whip]], respectively. This only alters its appearance, and causes the whip to become untradeable. It can be reverted by using a [[cleaning cloth]] on the whip, but the mix will not be returned. 
+
+==Products==
+{{Uses material list|Abyssal whip}}
+
+==Treasure Trails==
+{{EmoteClue}}
+
+*{{SherlockChallenge|Equipping an abyssal whip in front of the [[abyssal demon]]s in the [[Slayer Tower]]|master}}
+
+==Item sources==
+{{Drop sources|Abyssal whip}}
+
+==Sound effects==
+{{SFXTableHead}}
+{{SFXLine|file=Equip whip.wav|desc=Wielding}}
+{{SFXLine|file=Whip attack.wav|desc=Attacking}}
+{{SFXLine|file=Abyssal whip special attack.wav|desc=Special attack}}
+{{SFXTableBottom}}
+
+==Used in recommended equipment==
+{{Used in recommended equipment|Abyssal whip}}
+
+==Changes==
+{{Subject changes header}}
+{{Subject changes
+|date = 23 March 2022
+|update = Guardians of the Rift Launch
+|change = The item's examine text was changed; previously, it was "A weapon from the abyss."
+}}
+{{Subject changes
+|date = 10 April 2014
+|update = Easter & Slayer Updates
+|poll = Old School - Update priorities & new slayer drops
+|change = The Abyssal whip can now be combined with the [[kraken tentacle]] to create the [[abyssal tentacle]].
+}}
+{{Subject changes
+|date = 29 August 2006
+|update = Demons, Dragons and Giants
+|change = The item's value was increased again from 100,001 to 120,001.
+}}
+{{Subject changes
+|date = 16 May 2006
+|update = Game engine upgraded!
+|change = The item's animation was reverted.
+}}
+{{Subject changes
+|date = 20 February 2006
+|update = Updates, updates and more updates...
+|change = The item's value was increased from 100,000 to 100,001.
+}}
+{{Subject changes
+|date = 16 January 2006
+|update = Agility Pyramid
+|change = The item's animation was updated.
+}}
+{{Subject changes
+|date = 22 June 2005
+|update = Rogues Den + Tweaks
+|change = The item's special attack was updated. Prior to this update, the special attack would guarantee a maximum hit when damage is dealt. It is unknown what effects on accuracy this special attack had {{clarify|There are several claims of a fixed 50% accuracy on this hit, although no reputable source confirming this has been found; old video evidence seems to suggest the whip's accuracy may not have been altered by its old special attack, or an accuracy increase may be applied.}}.
+}}
+{{Subject changes
+|date = 15 February 2005
+|update = Ghosts Ahoy and Slayer Update
+|change = *The item was made obtainable.
+*The item was graphically updated.
+*The item's examine was changed from undefined ("''It's a Abyssal whip.''") to "''A weapon from the abyss.''"
+*The item's value was increased from 0 to 100,000.
+*The item was made members-only.
+}}
+{{Subject changes
+|date = 26 January 2005
+|update = Slayer Skill
+|change = The item was added to the game cache, but was unobtainable.
+}}
+{{Subject changes footer}}
+===Gallery (historical)===
+{|style="text-align: center" cellpadding="15"
+|[[File:Abyssal whip detail (historical).png|center|300x150px]]
+|[[File:Abyssal whip detail.png|center|300x150px]]
+|-
+|[[File:Abyssal whip (historical).png|center]]
+|[[File:Abyssal whip.png|center]]
+|-
+|26 January 2005 –<br/>15 February 2005
+|15 February 2005 –<br/>present
+|}
+
+==Trivia==
+* The whip is made from the spine of an abyssal demon.{{CiteTwitter|archiveurl=https://reldo.runescape.wiki/i/99760|archivedate=16 April 2022|author=Official RuneScape|url=https://twitter.com/runescape/status/999168549032640512|quote=Did you know, the Abyssal Whip is crafted from the spine of an abyssal demon 👿 Question: How do you recognize a real abyssal whip from a fake one? (© _Manks / Reddit) #WednesdayWisdom|date=23 May 2018}}
+*Like other slash weapons, an abyssal whip can be used in lieu of a [[knife]] when [[Sliced banana|slicing]] [[banana]]s despite having no apparent blade. It can also be used to slice through [[web]]s.
+*The whip has an odd value of 120,001 so that it is always kept on death ahead of a [[Mystic robe top]]. Previously, players would scam whip owners by luring them to the Wilderness, giving them three robe tops and then killing them. The victim would keep the robe tops on death as opposed to the much more valuable whip.
+
+==References==
+{{Reflist}}
+
+{{Slash weapons}}
+[[Category:Weapons with Special attacks]]
+[[Category:Collection log items]]

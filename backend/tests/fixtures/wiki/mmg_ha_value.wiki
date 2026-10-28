@@ -1,0 +1,93 @@
+<!-- title: Money making guide/Killing ogress shamans -->
+{{Mmgtable
+|Activity = Killing [[Ogress Shaman|ogress shamans]]
+|Image = [[File:Corsair cove killing ogress image.png|350px]]|
+|Skill = 80+ {{SCP|Defence}}{{SCP|Attack}}{{SCP|Strength}}{{SCP|Magic}}, {{SCP|Ranged|40}} recommended
+|Other = {{SCP|Magic|55}} for [[High Level Alchemy]] (optional)
+|Item = [[Coif]], [[cape]], [[leather boots]], [[amulet of power]], green d'hide armour ([[Green d'hide body|body]], [[Green d'hide chaps|chaps]], and [[Green d'hide vambraces|vambraces]]), [[rune scimitar]], 3-5x [[strength potion (4)]], [[chisel]] (optional)
+|Quest = [[The Corsair Curse]], [[Dragon Slayer I]]
+|Experience1 = Combat
+|Experience1num = (82*4)
+|Experience2 = Hitpoints
+|Experience2num = (82*4/3)
+|Experience3 = Cooking
+|Experience3num = (100*30)
+|Experience3isph = y
+|isperkill = y
+|kph = 80<!-- kph is assuming ~80 melee stats-->
+|Input1 = Lobster
+|Input1num = 15
+|Input1isph = y
+|Input2 = Nature rune
+|Input2num = (7/116)+(1/40)+(1/100)+(1/100)
+|Input3 = Fire rune
+|Input3num = 5*((7/116)+(1/40)+(1/100)+(1/100))
+|Output1 = Mithril kiteshield
+|Output1num = (7/116)
+|Output1value = {{HA|Mithril kiteshield}}
+|Output2 = Iron arrow
+|Output2num = 30*(5/116)
+|Output3 = Steel arrow
+|Output3num = 21*(5/116)
+|Output4 = Mithril arrow
+|Output4num = 10*(7/116)
+|Output5 = Air rune
+|Output5num = 15*(5/116)
+|Output6 = Mind rune
+|Output6num = 15*(5/116)
+|Output7 = Water rune
+|Output7num = 15*(5/116)
+|Output8 = Earth rune
+|Output8num = 15*(5/116)
+|Output9 = Fire rune
+|Output9num = 15*(5/116)
+|Output10 = Chaos rune	
+|Output10num = 22.5*(7/116)
+|Output11 = Cosmic rune
+|Output11num = 12.5*(5/116)
+|Output12 = Nature rune
+|Output12num = 11.5*(7/116)
+|Output13 = Law rune
+|Output13num = 11.5*(7/116)
+|Output14 = Death rune
+|Output14num = 11.5*(6/116)
+|Output15 = Coins
+|Output15num = 750*(9/116) + 5*(5/116)
+|Output15value = 1
+|Output16 = Limpwurt root
+|Output16num = (5/116)
+|Output17 = Uncut sapphire
+|Output17num = (4/116)
+|Output18 = Uncut emerald
+|Output18num = (4/116)
+|Output19 = Uncut ruby
+|Output19num = (4/116)
+|Output20 = Uncut diamond
+|Output20num = (4/116)
+|Output21 = Rune med helm
+|Output21num = (1/40)
+|Output21value = {{HA|Rune med helm}}
+|Output22 = Rune full helm
+|Output22num = (1/100)
+|Output22value = {{HA|Rune full helm}}
+|Output23 = Rune battleaxe
+|Output23num = (1/100)
+|Output23value = {{HA|Rune battleaxe}}
+|Output24 = Shaman mask
+|Output24num = (1/1200)
+|Output25 = Big bones
+|Output25num = (1/1)
+|Location = [[Corsair Cove Dungeon]]
+|Category = Combat/High
+|Members = No
+|Intensity = Moderate
+|Details =
+'''The profit rate assumes {{#var:kph}} kills per hour. Your actual profits may be higher or lower depending on your speed and luck.'''
+
+[[Ogress Shaman]]s are found in the [[Corsair Cove Dungeon]]. They drop high value [[rune equipment]], [[runes]], and [[uncut gems]]. The dungeon is accessible by starting the [[The Corsair Curse]] quest but it must be completed to access the nearby bank east of the dungeon entrance.
+
+When using melee, through the main entrance head south-east to the room with two shamans, a fire, and a raw tuna spawn. Once the shamans have stopped being aggressive, you can cook the tuna on the fire to sustain yourself indefinitely with high enough magic and defence levels (magic defence is calculated from both stats). Full [[green d'hide armour]] and an [[amulet of power]] is recommended for maximum [[free-to-play]] [[Magic]] defence bonus. Eating the [[bread]] that spawns might also be necessary to sustain yourself. Casting [[Bones to Bananas]] can also help (collect earth and water runes). 
+
+The [[Corsair Cove]] bank can be used to store loot, otherwise [[High Level Alchemy]] can allow you to stay in the dungeon for a longer time.
+}}
+{{Money making}}

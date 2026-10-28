@@ -1,0 +1,35 @@
+<!-- title: Money making guide/Carving maple logs into arrow shafts -->
+{{Mmgtable
+|Activity = Carving [[Maple logs]] into [[arrow shaft]]s
+|Image = [[File:Knife.png]] + [[File:Maple logs.png]] = [[File:Arrow shaft 1.png]]
+|Skill = {{SCP|Fletching|45}}
+|Item =
+* {{Coins|200000}}+ recommended
+* 1x [[Knife]]
+* [[Maple logs]]
+|Quest = None
+|Other = None
+|Other Benefits = {{SCP|Fletching|32,400}}
+|Input1 = Knife
+|Input1num = 1
+|Input2 = Maple logs
+|Input2num = 1620
+|Output1 = Arrow shaft
+|Output1num = 97200
+|Location = [[Grand Exchange]]
+|Category = Processing
+|Members = Yes
+|Intensity = Low
+|Details = [[Arrow shaft]]s are created by using a knife on [[Logs]]. This can be done from level 1, but better logs provide more arrow shafts as their yield. Beginning with [[Willow logs]], this can be slightly profitable, but with [[Maple logs]], the profit margin increases substantially.
+
+To start with, test the profit of making one batch of arrow shafts; buy one set of maple logs and a knife if needed from the [[Grand Exchange]]. Carve the logs by using the knife on the maple logs, and sell the resulting 60 arrow shafts.
+
+An inventory of 27 logs takes approximately 50 seconds to complete, so players can expect to carve one inventory a minute, accounting for banking time. This results in 1620 logs carved per hour.
+
+If using a [[fletching knife]], more logs can be processed per hour, with each inventory of logs taking about 32 seconds. This can result in upwards of almost 3000 logs per hour.
+
+== Headless Arrows ==
+{{main|Money_making_guide/Fletching_headless_arrows}}
+If desired, these arrow shafts can be combined with feathers, to be made into [[headless arrow]]s.
+}}
+{{Money making}}

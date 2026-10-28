@@ -1,0 +1,264 @@
+<!-- title: Money making guide/Chambers of Xeric (Challenge Mode) -->
+{{Mmgtable
+|Activity = [[Chambers of Xeric]] (Challenge Mode)
+|Image = [[File:Fighting Great Olm.png|300px]]
+|Skill =
+* {{SCP|Attack|95+}}, {{SCP|Strength}}, {{SCP|Defence}}, {{SCP|Magic}}, {{SCP|Ranged}} recommended
+* {{SCP|Prayer|85+}} recommended
+* A party member with {{SCP|Farming|55+}}, {{SCP|Herblore|78+}}, {{SCP|Construction|30+}} (strongly recommended)
+* {{SCP|Woodcutting|84+}} and {{SCP|Mining|80+}} recommended
+|Item =
+* Melee: [[Oathplate helm]], [[Oathplate chest]], [[Oathplate legs]], [[ultor ring]], [[amulet of rancour]], [[scythe of Vitur]], [[elder maul]], [[avernic treads (max)]], [[Infernal cape]],
+* Ranged: [[Masori body (f)]], [[Masori chaps (f)]], [[Necklace of anguish]], [[Twisted bow]] with [[Dragon arrows]], [[Dizana's quiver]], [[zaryte vambraces]]
+* Magic: [[Ancestral hat]], [[Ancestral robe top]], [[Ancestral robe bottom]], [[Occult necklace]], [[Confliction gauntlets]], [[Tumeken's shadow]], [[Imbued god cape]], [[Rune pouch]] (with runes for thralls)
+* Items: [[Dragon pickaxe]], [[Zamorak godsword]], 2 [[Stamina potion]]s, [[Divine super combat potion]], [[anglerfish]], [[antidote++]]
+|Quest = [[King's Ransom]] for [[Piety]]
+|Other =
+* {{SCP|Prayer|77}} for [[Rigour]] and [[Augury]]
+* {{SCP|Farming|85+}} for higher yield from farming patches
+|Other Benefits = Varied {{SCP|Combat}}
+|isperkill = y
+|kph = 1.7
+|Intensity = High
+|Input1 = Divine super combat potion(4)
+|Input1num = 0.425
+|Input2 = Stamina potion(4)
+|Input2num = 2
+|Input3 = Anglerfish
+|Input3num = 1.7
+|Input4 = Seeking dragon arrow
+|Input4num = 13.2
+|Input5 = Scythe of Vitur
+|Input5num = 125
+|Input5value = {{GEP|Vial of blood|1/100}} + {{GEP|Blood rune|2}}
+|Input6 = Tumeken's shadow
+|Input6num = 125
+|Input6value = {{GEP|Chaos rune|5}}+{{GEP|Soul rune|2}}
+|Input7 = Antidote++(4)
+|Input7num = 0.25
+{{#vardefine:regchance|{{#expr:(1-(62000/867580))}}}} <!--Chance of regular loot (no unique)-->
+|Output1 = Dexterous prayer scroll
+|Output1num = {{#expr:1*((62000/867580)*(12/56))}}
+|Output2 = Arcane prayer scroll
+|Output2num = {{#expr:1*((62000/867580)*(12/56))}}
+|Output3 = Twisted buckler
+|Output3num = {{#expr:1*((62000/867580)*(4/56))}}
+|Output4 = Dragon hunter crossbow
+|Output4num = {{#expr:1*((62000/867580)*(4/56))}}
+|Output5 = Dinh's bulwark
+|Output5num = {{#expr:1*((62000/867580)*(3/56))}}
+|Output6 = Ancestral hat
+|Output6num = {{#expr:1*((62000/867580)*(4/56))}}
+|Output7 = Ancestral robe top
+|Output7num = {{#expr:1*((62000/867580)*(4/56))}}
+|Output8 = Ancestral robe bottom
+|Output8num = {{#expr:1*((62000/867580)*(4/56))}}
+|Output9 = Dragon claws
+|Output9num = {{#expr:1*((62000/867580)*(3/56))}}
+|Output10 = Elder maul
+|Output10num = {{#expr:1*((62000/867580)*(2/56))}}
+|Output11 = Kodai insignia
+|Output11num = {{#expr:1*((62000/867580)*(2/56))}}
+|Output12 = Twisted bow
+|Output12num = {{#expr:1*((62000/867580)*(2/56))}}
+|Output13 = Death rune
+|Output13num = {{#expr:2*((1/33)*(62000/36))*{{#var:regchance}}}}
+|Output14 = Blood rune
+|Output14num = {{#expr:2*((1/33)*(62000/32))*{{#var:regchance}}}}
+|Output15 = Soul rune
+|Output15num = {{#expr:2*((1/33)*(62000/20))*{{#var:regchance}}}}
+|Output16 = Rune arrow
+|Output16num = {{#expr:2*((1/33)*(62000/14))*{{#var:regchance}}}}
+|Output17 = Dragon arrow
+|Output17num = {{#expr:2*((1/33)*(62000/202))*{{#var:regchance}}}}
+|Output18 = Grimy toadflax
+|Output18num = {{#expr:2*((2/3)*(1/33)*(62000/624))*{{#var:regchance}}}}
+|Output19 = Grimy ranarr weed
+|Output19num = {{#expr:2*((2/3)*(1/33)*(62000/946))*{{#var:regchance}}}}
+|Output20 = Grimy irit leaf
+|Output20num = {{#expr:2*((2/3)*(1/33)*(62000/194))*{{#var:regchance}}}}
+|Output21 = Grimy avantoe
+|Output21num = {{#expr:2*((2/3)*(1/33)*(62000/389))*{{#var:regchance}}}}
+|Output22 = Grimy kwuarm
+|Output22num = {{#expr:2*((2/3)*(1/33)*(62000/454))*{{#var:regchance}}}}
+|Output23 = Grimy snapdragon
+|Output23num = {{#expr:2*((2/3)*(1/33)*(62000/1560))*{{#var:regchance}}}}
+|Output24 = Grimy cadantine
+|Output24num = {{#expr:2*((2/3)*(1/33)*(62000/396))*{{#var:regchance}}}}
+|Output25 = Grimy lantadyme
+|Output25num = {{#expr:2*(((2/3)*1/33)*(62000/297))*{{#var:regchance}}}}
+|Output26 = Grimy dwarf weed
+|Output26num = {{#expr:2*((2/3)*(1/33)*(62000/240))*{{#var:regchance}}}}
+|Output27 = Grimy torstol
+|Output27num = {{#expr:2*((2/3)*(1/33)*(62000/972))*{{#var:regchance}}}}
+|Output28 = Toadflax seed
+|Output28num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/624))*{{#var:regchance}}}}
+|Output29 = Ranarr seed
+|Output29num = {{#expr:2*((1/3)*(1/7)*(1/33)*(62000/946))*{{#var:regchance}}}}
+|Output30 = Irit seed
+|Output30num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/194))*{{#var:regchance}}}}
+|Output31 = Avantoe seed
+|Output31num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/389))*{{#var:regchance}}}}
+|Output32 = Kwuarm seed
+|Output32num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/454))*{{#var:regchance}}}}
+|Output33 = Snapdragon seed
+|Output33num = {{#expr:2*((1/3)*(1/7)*(1/33)*(62000/1560))*{{#var:regchance}}}}
+|Output34 = Cadantine seed
+|Output34num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/396))*{{#var:regchance}}}}
+|Output35 = Lantadyme seed
+|Output35num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/297))*{{#var:regchance}}}}
+|Output36 = Dwarf weed seed
+|Output36num = {{#expr:2*((1/3)*(1/8)*(1/33)*(62000/240))*{{#var:regchance}}}}
+|Output37 = Torstol seed
+|Output37num = {{#expr:2*((1/3)*(1/7)*(1/33)*(62000/972))*{{#var:regchance}}}}
+|Output38 = Silver ore
+|Output38num = {{#expr:2*((1/33)*(62000/20))*{{#var:regchance}}}}
+|Output39 = Coal
+|Output39num = {{#expr:2*((1/33)*(62000/20))*{{#var:regchance}}}}
+|Output40 = Gold ore
+|Output40num = {{#expr:2*((1/33)*(62000/44))*{{#var:regchance}}}}
+|Output41 = Mithril ore
+|Output41num = {{#expr:2*((1/33)*(62000/32))*{{#var:regchance}}}}
+|Output42 = Adamantite ore
+|Output42num = {{#expr:2*((1/33)*(62000/166))*{{#var:regchance}}}}
+|Output43 = Runite ore
+|Output43num = {{#expr:2*((1/33)*(62000/2000))*{{#var:regchance}}}}
+|Output44 = Uncut sapphire
+|Output44num = {{#expr:2*((1/33)*(62000/188))*{{#var:regchance}}}}
+|Output45 = Uncut emerald
+|Output45num = {{#expr:2*((1/33)*(62000/142))*{{#var:regchance}}}}
+|Output46 = Uncut ruby
+|Output46num = {{#expr:2*((1/33)*(62000/242))*{{#var:regchance}}}}
+|Output47 = Uncut diamond
+|Output47num = {{#expr:2*((1/33)*(62000/508))*{{#var:regchance}}}}
+|Output48 = Lizardman fang
+|Output48num = {{#expr:2*((1/33)*(62000/28))*{{#var:regchance}}}}
+|Output49 = Pure essence
+|Output49num = {{#expr:2*((1/33)*(62000/2))*{{#var:regchance}}}}
+|Output50 = Saltpetre
+|Output50num = {{#expr:2*((1/33)*(62000/28))*{{#var:regchance}}}}
+|Output51 = Teak plank
+|Output51num = {{#expr:2*((1/33)*(62000/96))*{{#var:regchance}}}}
+|Output52 = Mahogany plank
+|Output52num = {{#expr:2*((1/33)*(62000/238))*{{#var:regchance}}}}
+|Output53 = Dynamite
+|Output53num = {{#expr:2*((1/33)*(62000/54))*{{#var:regchance}}}}
+|Output54 = Torn prayer scroll
+|Output54num = {{#expr:2*(1/33)}}*{{#var:regchance}}
+|Output55 = Onyx
+|Output55num = {{#expr:1/450}}
+|Location = [[Mount Quidamortem]]
+|Category = Combat/High
+|Members = Yes
+|Details = '''This profit rate assumes {{#var:kph}} raids completed per hour, with the player earning 62,000 points in each in a solo raid. Very experienced players will be able to push to two raids an hour, significantly improving profit.
+
+Challenge mode Chambers of Xeric is almost the same as normal mode, except the enemies' health and stats are increased. All rooms are also encountered in challenge mode, ensuring that plenty of points and supplies are available. Because all of the rooms are present, scouting is not required, and players barely need to bring in supplies from the outside in challenge mode, as they can easily obtain what they need within the raid.
+
+<!--vardefine-->
+{{#vardefine:valunique|{{#expr:1.0/56 *
+( 12 * {{GEP|Dexterous prayer scroll}} +
+ 12 * {{GEP|Arcane prayer scroll}} +
+ 4 * {{GEP|Twisted buckler}} +
+ 4 * {{GEP|Dragon hunter crossbow}} +
+ 3 * {{GEP|Dinh's bulwark}} +
+ 4 * {{GEP|Ancestral hat}} +
+ 4 * {{GEP|Ancestral robe top}} +
+ 4 * {{GEP|Ancestral robe bottom}} +
+ 3 * {{GEP|Dragon claws}} +
+ 2 * {{GEP|Elder maul}} +
+ 2 * {{GEP|Kodai insignia}} +
+ 2 * {{GEP|Twisted bow}}
+ )
+}}}}
+{{#vardefine:valcommon|{{#expr:2 * 1.0/33 *
+( 1.0/36 * {{GEP|Death rune}} +
+ 1.0/32 * {{GEP|Blood rune}} +
+ 1.0/20 * {{GEP|Soul rune}} +
+ 1.0/14 * {{GEP|Rune arrow}} +
+ 1.0/202 * {{GEP|Dragon arrow}} +
+ 2.0/3/946 * {{GEP|Grimy ranarr weed}} +
+ 2.0/3/624 * {{GEP|Grimy toadflax}} +
+ 2.0/3/194 * {{GEP|Grimy irit leaf}} +
+ 2.0/3/389 * {{GEP|Grimy avantoe}} +
+ 2.0/3/454 * {{GEP|Grimy kwuarm}} +
+ 2.0/3/1560 * {{GEP|Grimy snapdragon}} +
+ 2.0/3/396 * {{GEP|Grimy cadantine}} +
+ 2.0/3/297 * {{GEP|Grimy lantadyme}} +
+ 2.0/3/240 * {{GEP|Grimy dwarf weed}} +
+ 2.0/3/972 * {{GEP|Grimy torstol}} +
+ 1.0/3/946/7* {{GEP|Ranarr seed}} +
+ 1.0/3/624/8* {{GEP|Toadflax seed}} +
+ 1.0/3/194/8* {{GEP|Irit seed}} +
+ 1.0/3/389/8* {{GEP|Avantoe seed}} +
+ 1.0/3/454/8* {{GEP|Kwuarm seed}} +
+ 1.0/3/1560/7* {{GEP|Snapdragon seed}} +
+ 1.0/3/396/8* {{GEP|Cadantine seed}} +
+ 1.0/3/297/8* {{GEP|Lantadyme seed}} +
+ 1.0/3/240/8* {{GEP|Dwarf weed seed}} +
+ 1.0/3/972/7* {{GEP|Torstol seed}} +
+ 1.0/20 * {{GEP|Silver ore}} +
+ 1.0/20 * {{GEP|Coal}} +
+ 1.0/44 * {{GEP|Gold ore}} +
+ 1.0/32 * {{GEP|Mithril ore}} +
+ 1.0/166 * {{GEP|Adamantite ore}} +
+ 1.0/2000 * {{GEP|Runite ore}} +
+ 1.0/188 * {{GEP|Uncut sapphire}} +
+ 1.0/142 * {{GEP|Uncut emerald}} +
+ 1.0/242 * {{GEP|Uncut ruby}} +
+ 1.0/508 * {{GEP|Uncut diamond}} +
+ 1.0/28 * {{GEP|Lizardman fang}} +
+ 1.0/2 * {{GEP|Pure essence}} +
+ 1.0/28 * {{GEP|Saltpetre}} +
+ 1.0/96 * {{GEP|Teak plank}} +
+ 1.0/238 * {{GEP|Mahogany plank}} +
+ 1.0/54 * {{GEP|Dynamite}}
+)
+}}}}<!--
+
+-->
+{{#vardefine:valcost|{{#expr:
+ {{GEP|Divine super combat potion(4)}} +
+ {{GEP|Divine ranging potion(4)}} +
+ {{GEP|Stamina potion(4)|2}} +
+ {{GEP|Sanfew serum(4)}} +
+ {{GEP|Super restore(4)|3}} +
+ {{GEP|Saradomin brew(4)|5}} +
+ {{GEP|Anglerfish}} +
+ {{GEP|Dragon dart|8}} +
+ {{GEP|Zulrah's scales|24}} +
+ {{GEP|Dragon arrow|14}} +
+ {{GEP|Blood rune|270}}
+}}}}<!--
+
+-->
+
+Nearly all of the profit ({{#expr: 100 * (20000.0/867580)*{{#var:valunique}} / ((20000.0/867580)*{{#var:valunique}} + (1 - 20000.0/867580)*(20000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}}) ) round 1}}%) comes from the raid's unique drops. Profit will vary wildly depending on how many and what type of unique drops are received. 
+
+For every 8,676 points obtained, the player has a 1% chance of hitting the unique drop table. A solo deathless raid will generally yield around 62,000 points (57,000 + 5,000 from clearing the raid in time), or roughly a 7.1% chance of hitting the table, equating to a ~1/14.2 drop rate. If the player fails the time, the unique drop rate is reduced to 6.5%, or a ~1/15.3 drop rate.
+
+For every 1000 raids points earned, expect:
+*{{Coins|floor((1000.0/867580)*{{#var:valunique}})}} from unique drops.
+*{{Coins|floor((1 - 1000.0/867580)*(1000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}}))}} from common drops
+*Totalling {{Coins|floor((1000.0/867580)*{{#var:valunique}} + (1 - 1000.0/867580)*(1000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}}))}} per 1,000 raids points.
+
+===Strategies===
+See the [[Chambers of Xeric]] article and the [[Chambers of Xeric/Strategies|Chambers of Xeric Strategy Guide]] for a full description on how to complete raids.
+
+}}
+
+{| class ="wikitable"
+|-
+!Raid points
+!Expected loot
+|-
+|55,000
+|{{Coins|floor((55000.0/867580)*{{#var:valunique}} + (1 - 55000.0/867580)*(55000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}})+(1/450)*{{GEP|Onyx}})}}
+|-
+|60,000
+|{{Coins|floor((60000.0/867580)*{{#var:valunique}} + (1 - 60000.0/867580)*(60000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}})+(1/450)*{{GEP|Onyx}})}}
+|-
+|62,000
+|{{Coins|floor((62000.0/867580)*{{#var:valunique}} + (1 - 62000.0/867580)*(62000*{{#var:valcommon}}+1.0/33*{{GEP|Torn prayer scroll}})+(1/450)*{{GEP|Onyx}})}}
+|}
+{{Money making}}
+[[Category:MMG/Combat]]

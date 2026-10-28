@@ -1,0 +1,56 @@
+<!-- title: Pay-to-play Prayer training -->
+{{External|rs|rsc=Prayer training}}
+{{Redirect|Prayer training|the free players' guide|Free-to-play Prayer training}}
+Despite the high cost to Train [[Prayer]] effectively, it is a very important skill due to what it provides in combat utility. 
+
+Many [[quests]] recommend 43 Prayer, so that all 3 protection prayers are available for use. Important skill milestones include Level 50 for completing all quests, Level 77 for unlocking all prayers and Level 85 for completing all [[Achievement Diaries]]. A higher Prayer level also allows the player to restore more prayer points per dose of [[prayer potion]]/[[super restore]]/[[sanfew serum]]. 
+
+==Starting off==
+Early levels can be skipped by completing [[Quest experience rewards#Prayer|quests that give Prayer experience]].
+
+Completing [[The Restless Ghost]], [[Priest in Peril]], [[Recruitment Drive]], and [[Holy Grail]] will grant a total of 14,531 Prayer experience, which will get the player from level 1 to 30. [[Spirits of the Elid]] has more requirements, but gives another 8,000 Prayer experience.
+
+==Active training==
+===Cremating urium remains===
+{{Main|Money_making_guide/Cremating_urium_remains}}
+
+Cremating [[urium remains]] only rewards 35,000 Prayer experience per hour (or up to to 57,000 Prayer experience per hour with [[Hard Morytania Diary]] and max efficiency), but it is the fastest way to obtain the [[zealot's robes]]. The robes provide a 1.25% chance per piece to prevent various remains from being consumed whilst training Prayer – totalling 5% with the full set equipped. Given that most Prayer training methods are relatively expensive, the zealot's robes can be beneficial to obtain early. 
+
+At an average cost of 8 gp/xp, 1 million Prayer experience would normally cost {{Coins|8000000}} and the zealot's robes would reduce that amount by {{Coins|400000}}. 
+
+On average, 512 [[Gold key|gold keys]] are needed to obtain the full zealot's set, which calls for cremating approximately 648 urium remains at level 95 Firemaking (or 3,273 [[fiyr remains]] at level 80 Firemaking). Cremating 648 urium remains would cost {{NoCoins|({{GEP|urium remains}} + {{GEP|redwood pyre logs}})*648|c}} upfront and take approximately '''2-3 hours'''. The rewards from cremating the remains typically make this a profitable activity in addition to earning the full set of zealot's robes.
+
+===Offering bones at a gilded altar===
+[[File:Gilded altar built.png|160px|right]]
+The fastest way to train Prayer is to offer [[remains#Bones|bones]] at a [[gilded altar]] in a [[player-owned house]]. When both [[incense burner]]s are lit, the altar gives 350% experience per bone when a bone is offered at it. For example, burying a dragon bone gives 72 Prayer experience, but using it on the gilded altar with two incense burners lit would give 252 experience. While this method is the fastest way to train Prayer, it is also very expensive. Players who seek to save money are advised to offer bones at the Chaos altar in the Wilderness instead, as this is only slightly slower but offers twice as much experience per bone when compared to the gilded altar.
+
+Building a gilded altar requires level 75 [[Construction]], which can be boosted. The tier of incense burner does not matter, as all three types ([[Oak incense burners|oak]], [[Mahogany incense burners|mahogany]], and [[Marble incense burners|marble]]) yield the same experience bonus and remain lit for the same amount of time. Lighting an incense burner requires level 30 [[Firemaking]] and a [[marrentill]] herb, and both incense burners must be lit for the highest experience bonus. It is also recommended to have level 45 [[Magic]] for [[Camelot Teleport]] and [[Teleport to House]].
+
+{{Inventory|align=right
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Superior dragon bones
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Superior dragon bones
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Superior dragon bones
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Superior dragon bones
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Superior dragon bones
+|Superior dragon bones |Superior dragon bones |Superior dragon bones |Tinderbox
+|Superior dragon bones  |Marrentill |Marrentill |Law rune\2000
+}}
+Use the bank chest near [[Camelot Castle]] in a [[PvP world]] when offering bones. It is the closest one to a teleport and within a safe area from player killers. Equip a [[dust battlestaff]], and keep a [[tinderbox]] and [[law rune]]s in the inventory. Withdraw 24 bones and two [[marrentill]]s, teleport to the house, light the incense burners, and offer the bones at the gilded altar. Use each bone manually at the altar to speed up the process. Teleport back to Camelot and repeat.
+
+Players who do not have the Construction level to build a gilded altar can use the altar of a house party host for free. Ironmen cannot use this method as they are unable to access friend POHs. The official [[world]]s for hosted gilded altars are '''330''' (US East), '''465''' (Germany) and '''512''' (UK) at the [[Rimmington]] [[house portal]]. Take noted bones and unnote them at [[Phials]] located in the [[Rimmington General Store]] store for 5 coins each.
+
+Experience rates vary depending on the type of bone used and performance. With good banking and accurate clicks, players can offer 2,550 bones per hour when manually using the bones on the altar. This equates to around 1,340,000 experience per hour when using [[superior dragon bones]], or 643,000 experience per hour when using [[dragon bones]]. The rates can be increased up to 3,500 bones per hour if using alternative accounts to light the incense burners and bringing bones from the bank, or even higher if hiring runners. If the player is not manually using the bones on the altar, only up to 1,070 bones per hour can be offered.
+
+More information about experience rates and costs can be seen [[Pay-to-play Prayer training#Experience rates and cost|below]]. Currently, offering superior dragon bones costs {{Coins|{{GEP|Superior dragon bones}}/525}} coins per experience, and dragon bones  {{Coins|{{GEP|Dragon bones}}/252}} coins per experience.
+
+===Offering blessed bone shards to the libation bowl===
+[[File:Sacrificing at libation bowl.gif|thumb|200px|Sacrificing blessed bone shards at the libation bowl.]]
+Requiring level 30 Prayer, offering [[blessed bone shards]] to the [[libation bowl]] within [[the Teomat]] is slightly slower, but offers more experience per bone compared to the gilded altar.
+
+Fill the bowl with either [[Jug of blessed wine|jugs of blessed wine]] or [[Jug of blessed sunfire wine|jugs of blessed sunfire wine]], then sacrifice [[blessed bone shards]] as an offering for either 5 or 6 Prayer experience per shard. One jug of blessed wine fills the libation bowl enough for 400 blessed bone shards to be sacrificed in total. Each offering drains two Prayer points; players can recharge their prayer at the [[Shrine of Ralos]] in the southern building.
+
+Up to 100 blessed bone shards can be sacrificed per action, for a total of either 500 or 600 Prayer experience. Sacrificing happens automatically (4 [[ticks]] per action) so long as the player has remaining jugs of blessed wine, blessed bone shards, and Prayer points. Sacrificing can also be sped up (1 tick per action) by clicking manually.
+
+With a full inventory of 27 jugs of blessed sunfire wine, a player could sacrifice up to 10,800 bone shards per inventory, awarding 64,800 Prayer experience in only 65 seconds of sacrificing. Of course, this would also drain 216 Prayer points, so a few trips would need to be made to restore Prayer points at the Shrine of Ralos nearby.
+
+The [[zealot's robes]] '''do''' have a chance to save sacrificed blessed bone shards, and can trigger separately for each individual shard (rather than per sacrifice of 100). They will not save "charges" of the filled libation bowl, however.

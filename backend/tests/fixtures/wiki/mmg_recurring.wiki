@@ -1,0 +1,50 @@
+<!-- title: Money making guide/Bird house trapping -->
+{{Mmgtable recurring
+|Activity = [[Bird house trapping]]
+|Image = [[File:Bird house trapping.png|400px]]
+|Activity Time = 1.4
+|Recurrence Time = 50 minutes
+|Skill =
+* {{SCP|Magic|49}} highly recommended for enchanting [[digsite pendant]]s
+* High {{SCP|Hunter}} recommended
+* {{SCP|crafting|5-90}} if you wish to make your own houses
+* {{plink|Ironmen|pic=Ironman chat badge}}: {{SCP|construction|25}} to make a [[crafting table 2]] and assemble a [[clockwork]]
+|Other Benefits = {{SCP|Hunter|{{Formatexpr|4 * 1200}}}}
+|Other = 
+* [[Digsite pendant]] unlocked
+|Item =
+* [[Hammer]], [[chisel]], [[clockwork]], and logs or [[bird houses]]
+* [[Hop seeds]] or [[herb seeds]]
+* [[Strung rabbit foot]] (recommended)
+
+|Quest = [[Bone Voyage]]
+|Input1 = Redwood logs
+|Input1num = 4
+|Input2 = Potato seed
+|Input2num = 40
+|Input3 = Digsite pendant
+|Input3num = 0.2
+|Input3value = {{GEP|Ruby necklace}} + {{GEP|Cosmic rune}}
+|Output1 = Bird nest (seed)
+|Output1num = 4*0.7852
+|Output1value = {{Average drop value|mob=Bird nest (seeds)|mobname=Seed nest|killname=search|raw=true}}
+|Output2 = Bird nest (empty)
+|Output2num = 4*5*.525*(60/95)
+|Output3 = Bird nest (ring)
+|Output3num = 4*5*.525*(32/95)
+|Output3value = {{Average drop value|mob=Bird nest (ring)|mobname=Ring nest|killname=search|raw=true}}
+|Output4 = Bird nest (red egg)
+|Output4num = 4*5*.525*(3/95)
+|Output4value = ({{Average drop value|mob=Bird nest (seeds)|mobname=Seed nest|killname=search|raw=true}})*(1196/1200) + ({{GEP|Evil chicken head}})*(1/1200) + ({{GEP|Evil chicken wings}})*(1/1200) + ({{GEP|Evil chicken legs}})*(1/1200) + ({{GEP|Evil chicken feet}})*(1/1200) + {{GEP|Bird nest (empty)}}
+|Location = [[Fossil Island]]
+|Category = Hunter
+|Details = '''This guide assumes having {{SCP|Hunter|99|link=yes}}, setting all 4 [[redwood bird house]]s, sacrificing [[Bird's egg]]s to the [[Shrine]], and wearing a [[strung rabbit foot]], although the latter only slightly increases profits.'''
+
+See [[Bird house trapping|bird house trapping's]] page for recommended setup.
+
+Skipping the south bird house will slightly increase profit and xp per hour, at the cost of using more teleports and seed cycles to acquire the same profit/xp.
+}}
+
+{{Money making}}
+[[Category:MMG/Skilling]]
+[[Category:MMG/Recurring]]

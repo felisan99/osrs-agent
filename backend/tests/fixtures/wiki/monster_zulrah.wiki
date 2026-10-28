@@ -1,0 +1,147 @@
+<!-- title: Zulrah -->
+{{Instance|irs=Priestess Zul-Gwenwynig|cost=100000|kc=50}}
+{{HasStrategy}}
+{{Infobox Monster
+|version1 = Serpentine
+|version2 = Magma
+|version3 = Tanzanite
+|name = Zulrah
+|image1 = [[File:Zulrah (serpentine).png|x277px]]
+|image2 = [[File:Zulrah (magma).png|x277px]]
+|image3 = [[File:Zulrah (tanzanite).png|x277px]]
+|release = [[8 January]] [[2015]]
+|update = Zulrah - The Solo Snake Boss
+|members = Yes
+|combat = 725
+|size = 5
+|examine1 = The green hooded serpent of the poison waste.
+|examine2 = The crimson hooded serpent of the poison waste.
+|examine3 = The turquoise hooded serpent of the poison waste.
+|xpbonus = 0
+|max hit1 = 41
+|max hit2 = 30
+|max hit3 = 41
+|aggressive = Yes
+|poisonous = Yes ([[venom]])
+|attack style1 = [[Ranged]]
+|attack style2 = [[Typeless]]
+|attack style3 = [[Magic]], [[Ranged]]
+|attack speed = 3
+|slayxp = 500
+|cat = Bosses
+|assignedby = konar,nieve,duradel
+|hitpoints = 500
+|att = 1
+|str = 1
+|def = 300
+|mage = 300
+|range = 300
+|attbns = 0
+|strbns = 0
+|amagic = 50
+|mbns = 20
+|arange = 50
+|rngbns = 20
+|dstab = 0
+|dslash = 0
+|dcrush = 0
+|dmagic1 = -45
+|dmagic2 = 0
+|dmagic3 = 300
+|dlight1 = 50
+|dlight2 = 300
+|dlight3 = 0
+|dstandard1 = 50
+|dstandard2 = 300
+|dstandard3 = 0
+|dheavy1 = 50
+|dheavy2 = 300
+|dheavy3 = 0
+|elementalweaknesstype = Fire
+|elementalweaknesspercent = 50
+|poisonresistance = 100
+|venomresistance = 100
+|immunecannon = No
+|immunethrall = No
+|id1 = 2042
+|id2 = 2043
+|id3 = 2044
+|leagueRegion = Tirannwn
+}}
+'''Zulrah''' is a level 725 solo-only snake [[boss]]. Before the player can fight Zulrah, players must have completed [[Regicide]] to the point of reaching [[Port Tyras]], as well as having spoken with [[High Priestess Zul-Harcinqa]] to offer themselves as the sacrifice in place of the [[sacrifice|gnome child]], as [[Priestess Zul-Gwenwynig|Zul-Gwenwynig]] will prevent the player from boarding the boat until Zul-Harcinqa allows them to be the sacrifice.
+
+Killing Zulrah is a required task for the hard [[Western Provinces Diary#Hard|Western Provinces Achievement Diary]], which in turn is a requirement for upgrading to the [[Elite Void Knight equipment|Elite Void]] set.
+
+==History==
+Zulrah was created as an experiment by an unnamed [[dragonkin]] living in the [[Poison Waste]]. Originally seen as one of many failures, Zulrah was discarded into the swamp, where it grew into an unexpectedly powerful and intelligent serpent. It was found once again by its dragonkin creator, who named it "Zulrah" before eventually being eaten by their own creation.{{CiteText|text=Stained journal}}
+
+Sometime during the [[Fifth Age]], [[High Priestess Zul-Harcinqa|Harcinqa]], her mother, and her brother [[Rentos]] visited the Poison Waste. On 5th Bennath, a group of men, [[Ohn]], [[Mortarium]], [[Onan]], and several others, attempted to escape the elven clans by running south to the Poison Waste. With no food to eat, they attempted to fish for [[Sacred eel|eels]] in the swamp, to no avail. With no luck on catching food, they decide to camp out with the gnomes.
+
+Two days after, Zulrah appeared during the night and ate five of Ohn's men before the group could get to their senses. The next day after that, Harcinqa's mother attracted Zulrah's attention with a giant campfire, and held out her son, Rentos, which it devoured immediately. The gnome woman was able to bargain a deal with Zulrah, promising to send it sacrifices and worshipping it as a god if it did not wipe the whole group out. Zulrah simply slithered back into the swamp. The next day, Ohn's men began catching eels, which was interpreted as Zulrah agreeing to the deal. As the village of [[Zul-Andra]] was quickly formed; coincidentally, the woman decided to call it Zulrah, which its Dragonkin creator had done thousands of years ago.{{CiteText|text=Ohn's diary}}
+
+As a result, Zulrah is worshipped as a god, being given sacrifices at a whim; in return, it allows the village of Zul-Andra to stand. Around year 169 of the Fifth Age, an adventurer discovered the village and offered themselves as sacrifice to save a [[Sacrifice|gnome child]] who was going to be sacrificed to Zulrah. Ferried to Zulrah's shrine, it emerged to consume its prey, but to its surprise, found that this offering was fighting back. Despite the use of its powers, the adventurer managed to defeat it, although it simply slithered back into the swamp to recover. Zulrah did not appear to hold the village in contempt for the offering.
+
+==Transportation==
+[[File:Zulrah's_Shrine.png|thumb|300px|Zulrah's Shrine, with Zulrah's beginning phase shown.]]
+Zulrah is located at a shrine east of [[Zul-Andra]]. Players can quickly get here by:
+* taking a [[charter ship]] to [[Port Tyras]] and then running south
+* using the [[fairy ring]] code {{Fairycode|BJS}} to the small island west of [[Zul-Andra]], and then leaping across the stepping stones (requires 76 [[Agility]], can be boosted)
+* using a [[Zul-andra teleport]] scroll
+All of these methods require completion of [[Regicide]].
+
+Zulrah's Shrine is accessed by boarding the [[sacrificial boat]]. Upon entering the shrine, a still scene of the shrine will be shown with a prompted dialogue. Zulrah will appear as soon as the player continues the dialogue or performs an action. The only way to escape from the shrine is by killing Zulrah, teleporting, logging out, or dying.
+
+Players can spectate a fight using a telescope located on an island north of Zul-Andra, which is accessed by using the [[fairy ring]] code {{fairycode|DLR}}.
+
+When a player defeats Zulrah, the drops will be received under the player, much like [[cave kraken]]s. A [[Zul-Andra teleport (scenery)|Zul-andra teleport]] scroll will also be dropped near the player, which cannot be picked up but can be used to return to Zul-Andra. To fight Zulrah again after, the player must return to the shrine via the boat.
+
+==Fight overview==
+{{Main|Zulrah/Strategies}}
+[[File:Fighting Zulrah.png|thumb|300px|A player fighting Zulrah in its tanzanite form]]
+The shrine is a small U-shaped island with two pillars in the middle corners, and Zulrah swims in the swampy water around the island throughout the fight. It cannot be reached with melee (with the exception of [[halberd]]s).  Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead.
+
+Zulrah periodically switches forms, distinguishable by its colour, that have varying resistance to Ranged and Magic. In turn, Zulrah attacks with Ranged and Magic, as well as an avoidable Melee attack where it targets the player with its tail, depending on its form. It can also summon [[snakeling]]s, smaller versions of itself, on the platform to attack the player, along with toxic clouds that deal rapid damage if they stand in one.
+
+Zulrah and its snakelings inflict [[venom]] with their attacks, an enhanced version of [[poison]] that increases its damage the longer it has affected the player, starting at 6 damage per hit and increasing up to 20. Standard poison protection will only reduce venom to regular poison and will not grant any immunity; [[anti-venom]], [[anti-venom+]], [[extended anti-venom+]], or wearing a [[serpentine helm]] are much more effective for eliminating and preventing venom.
+
+[[File:Zulrah Patterns.png|thumb|150px|An overview of the fight's patterns]]
+Zulrah periodically changes forms by diving into the swamp and resurfacing somewhere else. It may spawn snakelings and toxic clouds in any form.
+
+*When Zulrah is green, it attacks with Ranged. It is weak to Magic.
+**At approximately 2 minutes, Zulrah will be in its green form and attack with alternating Ranged and Magic attacks (colloquially called "Jad phase").
+**If the fight takes a long time (3+ minutes), it is possible for Zulrah to be in its green form and attack unpredictably with Ranged and Magic.
+*When Zulrah is blue, it attacks with Ranged and Magic. It is weak to Ranged. Due to the Magic attacks being more common and more accurate, it is recommended to use [[Protect from Magic]]. Zulrah can attack with Ranged up to five times in succession.
+*When Zulrah is red, it uses a [[typeless]] attack wherein it swings its tail at the player's position, which can be avoided by moving two tiles away; if it hits, it will deal heavy damage and [[Stun (status)|stun]] the player. It is more resistant to damage in this phase than in the other two forms, but Magic is typically more effective than Ranged.
+
+The forms and when and where Zulrah spawns snakelings and toxic clouds are predictable: there are four possible patterns for the fight that dictate what it will do next. Further information can be read on the [[Zulrah/Strategies|strategy article]].
+
+
+Damage is calculated on animation/attack generation not when projectile hits you.
+
+===Player death===
+Upon [[death]] at Zulrah, all items which would normally be lost are held by the [[Priestess Zul-Gwenwynig|priestess]] at the Zul-Andra dock, who acts as an [[Item Retrieval Service]]. Items held by the priestess are '''permanently lost''' if the player dies an unsafe death before reclaiming them. Some [[Death#Exceptions|specific anomalies]] may occur with some items.
+
+Players who have defeated Zulrah fewer than 50 times can obtain their items free of charge; afterwards, they must pay 100,000 coins each time they die to reclaim their items. Ultimate Iron players are unaffected by this regardless of their kill count; they will continue to reclaim their items from the priestess for free, without use of that chest menu.{{CiteNews|url=https://secure.runescape.com/m=news/death-mechanics-in-old-school?oldschool=1|title=Death Mechanics in Old School|newsdate=13 February 2022}}
+
+Completion of the elite [[Western Provinces Diary#Elite|Western Provinces Diary]] grants the player one free daily resurrection at Zulrah which restores all stats and allows the player to continue the fight from the current point if they drop to 0 hitpoints. This does not count as a death for purposes such as losing [[Ironman Mode|hardcore ironman]] status as it is considered a "safe" death. In order to benefit from this perk again, the player must log in after the daily reset time.
+
+==Money making==
+{{Mmgsection|Killing Zulrah|Killing Zulrah (max efficiency)}}
+
+==Drops==
+''In addition to the 100% drops, the player will also have two rolls on Zulrah's drop table, excluding tertiary items, which have only one roll. The displayed drop chances represent a single roll.''
+
+{{DropLogProject|kills=223726}}
+
+{{Average drop value}}
+
+{{Average drop value|alch=yes}}
+
+{{Average drop value|brimstone=yes}}
+
+''The effective drop rate for one of Zulrah's uniques (tanzanite fang, magic fang, visage, tanzanite mutagen, or magma mutagen) is ~1/162.5.''
+
+===100%===
+{{DropsTableHead}}
+{{DropsLine|name=Zulrah's scales|quantity=100-299<!--note: the 500 scale drop is separate and intentionally excluded here-->|rarity=Always}}
+{{DropsTableBottom}}

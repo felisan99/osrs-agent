@@ -1,0 +1,126 @@
+<!-- title: Cook's Assistant -->
+{{External|rs|rsc=Cook's assistant|dw}}
+{{Has quick guide|speedrun=1}}
+{{Infobox Quest
+|name = Cook's Assistant
+|number = 1
+|image = [[File:Cook's Assistant.png|300px]]
+|release = [[4 January]] [[2001]]
+|update = Runescape beta is now online!
+|members = No
+|series = None
+|developer = [[Paul Gower]]
+}}
+'''Cook's Assistant''' is the first ''[[Old School RuneScape|RuneScape]]'' [[Quests|quest]] ever released and one of the six quests available during the game's launch. In the quest, the player must help the [[Cook (Lumbridge)|cook]] of [[Lumbridge Castle]] make a birthday [[cake]] for [[Duke Horacio]].
+
+==Details==
+{{Quest details
+|start = Talk to the [[Cook (Lumbridge)|Cook]] in the kitchen of [[Lumbridge Castle]].
+|startmap = 3208,3214
+|difficulty = Novice
+|description = The Lumbridge Castle cook is in a mess. It is the Duke of Lumbridge's birthday and the cook is making the cake.
+
+He needs a lot of ingredients and doesn't have much time.
+|length = Very Short
+|items = * [[Egg]] (can be obtained during the quest)
+* [[Bucket of milk]]
+**A [[bucket]] (if obtaining the milk during the quest)
+* [[Pot of flour]]
+**A [[pot]] (if obtaining the flour during the quest)
+|leagueRegion = <poem>
+Unlocking {{LeagueRegion|Asgarnia}} {{okay}} will auto-complete the quest
+Unlocking {{LeagueRegion|Kandarin}} {{okay}} will auto-complete the quest
+</poem>
+}}
+
+==Walkthrough==
+This quest is typically among the first to be completed by new players and is intended to encourage exploration of [[Lumbridge]]. However, for non [[Ironmen]] players, it is possible to skip gathering the ingredients yourself by purchasing the items on the [[Grand Exchange]] before speaking to the [[Cook (Lumbridge)|Cook]], allowing for the quest to be completed in seconds.
+
+===A feast for a Duke===
+[[File:Cook (Lumbridge) chathead.png|left|frameless]]
+Begin the quest by speaking with the Lumbridge [[Cook (Lumbridge)|cook]] found in the kitchen on the {{FloorNumber|uk=0}} of [[Lumbridge Castle]]. He mentions it is [[Duke Horacio]]'s birthday and that he is supposed to bake the Duke a [[cake]]. Unfortunately, however, he has forgotten to buy the ingredients and asks the player to bring him a [[bucket of milk]], an [[egg]], and a [[pot of flour]].
+
+====Bucket and pot====
+A [[bucket]] spawns in the cellar of Lumbridge Castle, and a [[pot]] spawns in the kitchen on the centre table. You can also purchase both a bucket and a pot from the [[Lumbridge General Store]] for {{NoCoins|2}} and {{NoCoins|1}} [[coins]], respectively.
+
+====Egg====
+{{Map
+|align=right
+|x=3166
+|y=3288
+|mtype=pin
+|x:3181,y:3288,icon:redPin,desc:Chicken coop
+|x:3177,y:3315,icon:bluePin,desc:Dairy cow field
+|x:3163,y:3289,icon:yellowPin,desc:Wheat field
+|caption={{mapkey
+ |title=Ingredient locations
+ |line1=...red,text=Chicken coop
+ |line2=...blue,text=Dairy cow field
+ |line3=...yellow,text=Wheat field
+}}
+}}
+Go east out of [[Lumbridge Castle]] and run north along the path until you reach the [[chicken]] [[coop]] north-west of [[Fred the Farmer|Farmer Fred]]'s house. Go into the coop and pick up an [[egg]].
+
+====Bucket of milk====
+With an empty [[bucket]], go north into the [[cow]] pasture. Use the empty bucket on a [[dairy cow]] (distinguishable by its cowbell) to get a [[bucket of milk]]. You can optionally talk to [[Gillie Groats]] for an explanation on how to milk a cow. She can be found across the [[River Lum|river]] next to the dairy cow in the eastern [[Lumbridge cow field]].
+
+The cook will also accept milk that is in a [[bottomless bucket of milk]], taking one bucket worth of milk from it.
+
+====Pot of flour====
+With an empty [[pot]], leave the cow pasture and go south-west to the wheat field. Pick some [[grain]], and then enter the [[Mill Lane Mill]], found up the road to the north-east. Climb to the top floor, put the grain in the hopper, then pull the lever and climb back down to the {{FloorNumber|uk=0}}. Finally, use an empty pot on the [[flour bin]] (which is now full of flour) to get a [[pot of flour]]. You can optionally talk to [[Millie Miller]] inside the mill for an explanation on how to make [[pot of flour|flour]].
+
+===Delivery===
+After collecting the ingredients, speak to the [[Cook (Lumbridge)|cook]] to deliver them.
+
+'''Congratulations, quest complete!'''
+
+{{Clear}}
+
+==Rewards==
+{{Quest rewards
+|name = Cook's Assistant
+|image=[[File:Cook's Assistant reward scroll.png|centre]]
+|qp = 1
+|rewards = 
+* {{SCP|Cooking|300|link=yes}} [[experience]]
+* Permission to use the [[Cooking range (Lumbridge Castle)|Cook-o-matic 100]], which reduces the chance of burning some [[food]]s.
+}}
+
+==Required for completing==
+The completion of Cook's Assistant is a requirement to complete the following:
+* [[Recipe for Disaster]]
+* [[Easy Lumbridge & Draynor Diary]]: ''Bake some bread on the Lumbridge castle kitchen range.''
+
+==Transcript==
+{{Hastranscript|quest}}
+
+==Changes==
+{{Subject changes header}}
+{{Subject changes
+|date = 14 January 2026
+|update = New Player Improvements Round 2
+|change = The quest's journal entry was updated to make it more intuitive.
+}}
+{{Subject changes
+|date = 14 May 2020
+|update = Bounty Hunter Feedback Changes
+|change = All of the free-to-play quest journals have been updated to be more informative. 
+}}
+{{Subject changes
+|date = 8 August 2019
+|update = Smithing and Silver Crafting Interfaces
+|change = The dialogue in the Cook's Assistant quest, text in the quests log, and windmills have been updated to be more informative and to have improved usability.
+}}
+{{Subject changes
+|date = 2 August 2018
+|update = Tournament World, Mobile Enhancements and Theatre of Blood Tweaks
+|change = Cooks Assistant, Sheep Shearer and Imp Catcher will now recognise that you have the items required to complete the quest upon starting each of them. 
+}}
+{{Subject changes footer}}
+
+==Trivia==
+* There is an [[wikipedia:Easter_egg_(media)|easter egg]] in the [[Death to the Dorgeshuun]] quest. When you introduce [[Zanik]] to the [[Cook (Lumbridge)|cook]], he tries to offer the quest to her, saying, "In fact, it's a good thing I met you. It's the Duke's birthday today, and I should be making him a lovely big birthday cake. I need eggs, flour, and milk..." The player then tells the cook that Zanik does not have time for that, to which he responds, "It was worth a try." This insinuates that the cook asks all newcomers to bring him supplies.
+* During the [[20th Anniversary event]], it was revealed that the cook has attempted and failed to bake a cake countless times, explaining his recurring need for ingredients from new adventurers.
+* The [[Cook (servant)|cook]] at the [[Servants' Guild]] of [[Ardougne]] references this quest in her dialogue, saying, "Overnight I was fired and replaced by some fool who can't even bake a cake without help!"
+
+{{Cook's Assistant}}
