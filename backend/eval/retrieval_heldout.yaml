@@ -1,0 +1,153 @@
+# Held-out retrieval benchmark (English): fresh questions, never used to tune anything.
+#
+# eval/retrieval.yaml (the "dev" set) is what the chunking, the template renderers and the retriever
+# were developed against, so its numbers are optimistic by construction. These cases were written
+# afterwards, on pages and facts that set does not use, and verified only against the cached wikitext
+# (`python -m eval.retrieval_bench --cases eval/retrieval_heldout.yaml --check-gold`) before anything
+# was run. Same format as retrieval.yaml.
+
+version: 1
+
+cases:
+  # ------------------------------------------------------------------ drops
+  - id: ho-drops-zulrah-magic-fang
+    kind: drops
+    q: What is the drop rate of the magic fang from Zulrah?
+    gold:
+      - {page: Zulrah, section: '^Drops', has: ['Magic fang[^\n]*1/1024'], source: ['name=Magic fang']}
+  - id: ho-drops-giant-mole
+    kind: drops
+    q: What does the Giant Mole drop?
+    gold:
+      - {page: Giant Mole, section: '^Drops', has: ['Mole skin'], source: ['name=Mole skin']}
+  - id: ho-drops-kraken-tentacle
+    kind: drops
+    q: How rare is the kraken tentacle from the Kraken?
+    gold:
+      - {page: Kraken, section: '^Drops', has: ['Kraken tentacle[^\n]*1/400'], source: ['name=Kraken tentacle']}
+  - id: ho-drops-hill-giant-key
+    kind: drops
+    q: How likely is a hill giant to drop a giant key?
+    gold:
+      - {page: Hill Giant, section: '(?i)drops', has: ['Giant key[^\n]*1/128'], source: ['name=Giant key']}
+
+  # ------------------------------------------------------------------ sources
+  - id: ho-source-tormented-synapse
+    kind: sources
+    q: What drops the tormented synapse?
+    gold:
+      - {page: Tormented Demon, section: '^Drops', has: ['Tormented synapse'], source: ['name=Tormented synapse']}
+      - {page: Tormented synapse, has: ['(?i)tormented demon'], source: ['(?i)tormented demon']}
+  - id: ho-source-bandos-hilt
+    kind: sources
+    q: Which boss drops the Bandos hilt?
+    gold:
+      - {page: General Graardor, section: '^Drops', has: ['Bandos hilt'], source: ['name=Bandos hilt']}
+      - {page: Bandos hilt, has: ['Graardor'], source: ['Graardor']}
+  - id: ho-source-trident-of-the-seas
+    kind: sources
+    q: Where do I get a trident of the seas?
+    gold:
+      - {page: Kraken, section: '^Drops', has: ['Trident of the Seas'], source: ['Trident of the Seas']}
+      - {page: Trident of the Seas, section: '^$', has: ['(?i)cave kraken|kraken boss'], source: ['(?i)kraken boss|cave kraken']}
+    notes: >
+      label corrected after the first run: it was written assuming the item had no page of its own
+      (a case-sensitive title probe said so); "Trident of the Seas" exists and its lead answers the
+      question, so that page counts too
+
+  # ------------------------------------------------------------------ stats
+  - id: ho-stats-vorkath-hitpoints
+    kind: stats
+    q: How many hitpoints does Vorkath have?
+    gold:
+      - {page: Vorkath, section: '^$', has: ['(?i)hitpoints:?\s*750'], source: ['hitpoints1\s*=\s*750']}
+  - id: ho-stats-gargoyle-slayer-level
+    kind: stats
+    q: What Slayer level do I need to kill gargoyles?
+    gold:
+      - {page: Gargoyle, section: '^$', has: ['\b75\b'], source: ['slaylvl\s*=\s*75']}
+  - id: ho-stats-gargoyle-slayer-masters
+    kind: stats
+    q: Which Slayer masters can assign gargoyles?
+    gold:
+      - {page: Gargoyle, section: '^$', has: ['(?i)vannaka'], source: ['assignedby\s*=.*vannaka']}
+  - id: ho-stats-piety-requirements
+    kind: stats
+    q: What are the requirements for the Piety prayer?
+    gold:
+      - {page: Piety, has: ['70 Defence|Defence level of 70|70 Prayer'], source: ['Defence\]\] level of 70']}
+
+  # ------------------------------------------------------------------ items
+  - id: ho-item-nature-rune-level
+    kind: items
+    q: What Runecraft level do I need to craft nature runes?
+    gold:
+      - {page: Nature rune, has: ['level 44'], source: ['level 44']}
+  - id: ho-item-fighter-torso
+    kind: items
+    q: What do I need to wear a fighter torso?
+    gold:
+      - {page: Fighter torso, has: ['40 Defence'], source: ['40 \[\[Defence\]\]']}
+  - id: ho-item-dragon-dagger-special
+    kind: items
+    q: What is the special attack of the dragon dagger called?
+    gold:
+      - {page: Dragon dagger, has: ['Puncture'], source: ['Puncture']}
+
+  # ------------------------------------------------------------------ quests
+  - id: ho-quest-dt1-items
+    kind: quests
+    q: What items do I need to bring for Desert Treasure?
+    gold:
+      - {page: Desert Treasure I, has: ['Spiked boots'], source: ['Spiked boots']}
+  - id: ho-quest-ds2-skills
+    kind: quests
+    q: What skill levels do I need for Dragon Slayer II?
+    gold:
+      - {page: Dragon Slayer II, section: '^Details', has: ['75 Magic'], source: ['Magic\|75']}
+  - id: ho-quest-mm2-start
+    kind: quests
+    q: Who do I talk to in order to start Monkey Madness II?
+    gold:
+      - {page: Monkey Madness II, section: '^Details', has: ['King Narnode'], source: ['King Narnode']}
+
+  # ------------------------------------------------------------------ locations and mechanics
+  - id: ho-loc-barrows
+    kind: locations
+    q: Where is the Barrows minigame?
+    gold:
+      - {page: Barrows, has: ["Mort'ton"], source: ["Mort'ton"]}
+  - id: ho-diary-falador-hard
+    kind: diaries
+    q: What are the Falador hard diary tasks?
+    gold:
+      - {page: Falador Diary, section: '^Hard', source: ['==Hard==']}
+
+  # ------------------------------------------------------------------ boss strategies
+  - id: ho-strat-zulrah-gear
+    kind: strategies
+    q: What gear should I bring to fight Zulrah?
+    gold:
+      - {page: Zulrah/Strategies, has: ['Recommended equipment'], source: ['Recommended equipment']}
+  - id: ho-strat-vorkath-prayers
+    kind: strategies
+    q: Which protection prayers should I use at Vorkath?
+    gold:
+      - {page: Vorkath/Strategies, has: ['Protect from Magic'], source: ['Protect from Magic']}
+  - id: ho-strat-nightmare-inventory
+    kind: strategies
+    q: What should I bring in my inventory for the Nightmare?
+    gold:
+      - {page: The Nightmare/Strategies, has: ['Inventory:'], source: ['\{\{Inventory']}
+
+  # ------------------------------------------------------------------ clue scrolls
+  - id: ho-clue-sir-share-red
+    kind: clues
+    q: What is the solution to the anagram SIR SHARE RED?
+    gold:
+      - {page: 'Clue scroll (beginner) - SIR SHARE RED', has: ['Hairdresser'], source: ['Hairdresser']}
+  - id: ho-clue-ominous-stones
+    kind: clues
+    q: Where do I dig for the clue "Dig between some ominous stones in Falador"?
+    gold:
+      - {page: 'Clue scroll (easy) - Dig between some ominous stones in Falador', has: ['(?i)standing stones'], source: ['(?i)standing stone']}

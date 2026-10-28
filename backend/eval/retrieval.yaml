@@ -1,0 +1,462 @@
+# Retrieval benchmark (English): does the right chunk come back for a player's question?
+# Used by eval/retrieval_bench.py. No LLM, no Jev, no key: only the embedder, Postgres and the
+# retriever, so a run takes seconds and costs nothing. It is what chunking and embedder changes
+# are judged with (docs/rag-quality.md).
+#
+# Per case:
+#   id, kind, q            what a player would ask
+#   gold                   alternatives: a retrieved chunk is a hit if it satisfies ANY entry
+#     page | page_re       exact title of the wiki page (or a regex on the title)
+#     section              regex on the chunk's section path ('^$' = the lead; omitted = any)
+#     has                  regexes that must ALL match the chunk text (case-sensitive unless (?i))
+#     source               regexes that must appear in the page's raw wikitext (--check-gold uses
+#                          them to prove the label is true, independently of how it is rendered)
+#   notes                  why the case exists
+#
+# Cases were written from the player's side, before looking at what the retriever returned, and
+# every `source` was checked against the cached wikitext (python -m eval.retrieval_bench
+# --check-gold). `section` is what separates "the page's drop table" from "the lead mentions the
+# item": a chunk of the right page but the wrong section does not count in the strict metric.
+
+version: 1
+
+cases:
+  # ------------------------------------------------------------------ drops: monster -> items
+  - id: drops-moss-giant-list
+    kind: drops
+    q: What does a moss giant drop?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['Nature rune'], source: ['Nature rune']}
+  - id: drops-moss-giant-mossy-key
+    kind: drops
+    q: What is the drop rate of the mossy key from moss giants?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['Mossy key[^\n]*1/150'], source: ['1/150']}
+      - {page: Mossy key, has: ['1/150'], source: ['1/150']}
+  - id: drops-moss-giant-key-on-task
+    kind: drops
+    q: Is the mossy key drop rate better while on a Slayer task?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['1/75'], source: ['1/75']}
+      - {page: Mossy key, has: ['1/75'], source: ['1/75']}
+    notes: the on-task rate lives in a footnote of the drop table
+  - id: drops-moss-giant-clue
+    kind: drops
+    q: Do moss giants drop clue scrolls?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['[Cc]lue scroll'], source: ['DropsLineClue']}
+  - id: drops-moss-giant-herbs
+    kind: drops
+    q: Do moss giants drop herbs?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['[Hh]erb'], source: ['HerbDropLines']}
+  - id: drops-moss-giant-gems
+    kind: drops
+    q: Do moss giants roll the gem drop table?
+    gold:
+      - {page: Moss giant, section: '^Drops', has: ['Gem drop table'], source: ['GemDropTable']}
+  - id: drops-vorkath-always
+    kind: drops
+    q: What does Vorkath always drop?
+    gold:
+      - {page: Vorkath, section: '^Drops', has: ['Superior dragon bones'], source: ['Superior dragon bones']}
+  - id: drops-graardor-chestplate
+    kind: drops
+    q: What is the drop rate of the Bandos chestplate from General Graardor?
+    gold:
+      - {page: General Graardor, section: '^Drops', has: ['Bandos chestplate[^\n]*1/381'], source: ['1/381']}
+  - id: drops-graardor-any-piece
+    kind: drops
+    q: How likely is it to get any piece of Bandos armour from General Graardor?
+    gold:
+      - {page: General Graardor, section: '^Drops', has: ['1/127'], source: ['1/127']}
+    notes: the combined rate is only in a footnote
+  - id: drops-zulrah-fang
+    kind: drops
+    q: How rare is the tanzanite fang from Zulrah?
+    gold:
+      - {page: Zulrah, section: '^Drops', has: ['Tanzanite fang[^\n]*1/1024'], source: ['1/1024']}
+  - id: drops-abyssal-demon-whip
+    kind: drops
+    q: How often does an abyssal demon drop an abyssal whip?
+    gold:
+      - {page: Abyssal demon, section: '^Drops', has: ['Abyssal whip[^\n]*1/512'], source: ['1/512']}
+  - id: drops-green-dragon-list
+    kind: drops
+    q: What does a green dragon drop?
+    gold:
+      - {page: Green dragon, section: '(?i)drops', has: ['Green dragonhide'], source: ['Green dragonhide']}
+  - id: drops-green-dragon-bank-note
+    kind: drops
+    q: Do green dragons drop dragon bones as bank notes?
+    gold:
+      - {page: Green dragon, section: '(?i)drops', has: ['bank note'], source: ['bank note']}
+    notes: a condition written in a footnote of the drop table
+
+  # ------------------------------------------------------------------ sources: item -> where
+  - id: source-abyssal-whip
+    kind: sources
+    q: Which monsters drop the abyssal whip?
+    gold:
+      - {page: Abyssal demon, section: '^Drops', has: ['Abyssal whip'], source: ['Abyssal whip']}
+      - {page: Abyssal whip, has: ['abyssal demons'], source: ['abyssal demon']}
+  - id: source-mossy-key
+    kind: sources
+    q: Where do I get a mossy key?
+    gold:
+      - {page: Mossy key, has: ['moss giant'], source: ['moss giant']}
+      - {page: Moss giant, section: '^Drops', has: ['Mossy key'], source: ['Mossy key']}
+      - {page: Bryophyta, has: ['(?i)mossy key'], source: ['(?i)mossy key']}
+  - id: source-bandos-chestplate
+    kind: sources
+    q: Which boss drops the Bandos chestplate?
+    gold:
+      - {page: General Graardor, section: '^Drops', has: ['Bandos chestplate'], source: ['Bandos chestplate']}
+      - {page: Bandos chestplate, has: ['Graardor'], source: ['Graardor']}
+  - id: source-tanzanite-fang
+    kind: sources
+    q: What drops the tanzanite fang?
+    gold:
+      - {page: Zulrah, section: '^Drops', has: ['Tanzanite fang'], source: ['Tanzanite fang']}
+      - {page: Tanzanite fang, has: ['Zulrah'], source: ['Zulrah']}
+  - id: source-armadyl-crossbow
+    kind: sources
+    q: Which boss drops the Armadyl crossbow?
+    gold:
+      - {page: Commander Zilyana, section: '^Drops', has: ['Armadyl crossbow'], source: ['Armadyl crossbow']}
+      - {page: Armadyl crossbow, has: ['Zilyana'], source: ['Zilyana']}
+  - id: source-berserker-ring
+    kind: sources
+    q: Which monster drops the berserker ring?
+    gold:
+      - {page: Berserker ring, has: ['Dagannoth Rex'], source: ['Dagannoth Rex']}
+      - {page: Dagannoth Rex, section: '^Drops', has: ['Berserker ring'], source: ['Berserker ring']}
+
+  - id: source-dragon-pickaxe
+    kind: sources
+    q: What monsters drop the dragon pickaxe?
+    gold:
+      - {page: Dragon pickaxe, section: '^Drop sources', has: ['Callisto']}
+      - {page: Callisto, section: '^Drops', has: ['Dragon pickaxe'], source: ['name=Dragon pickaxe']}
+      - {page: Venenatis, section: '^Drops', has: ['Dragon pickaxe'], source: ['name=Dragon pickaxe']}
+    notes: >
+      the item page's own drop-source table is generated by the wiki at view time, so no page
+      source holds the answer; only the monsters' drop tables do
+  - id: source-dragon-boots
+    kind: sources
+    q: Which monster drops dragon boots?
+    gold:
+      - {page: Dragon boots, section: '^Drop sources', has: ['Spiritual mage']}
+      - {page: Spiritual mage, section: '^Drops', has: ['Dragon boots'], source: ['name=Dragon boots']}
+  - id: source-zamorakian-spear
+    kind: sources
+    q: Which boss drops the Zamorakian spear?
+    gold:
+      - {page: Zamorakian spear, section: '^Drop sources', has: ["K'ril Tsutsaroth"]}
+      - {page: "K'ril Tsutsaroth", section: '^Drops', has: ['Zamorakian spear'], source: ['name=Zamorakian spear']}
+  - id: source-draconic-visage
+    kind: sources
+    q: Which monsters drop the draconic visage?
+    gold:
+      - {page: Draconic visage, section: '^Drop sources', has: ['Vorkath']}
+      - {page: Vorkath, section: '^Drops', has: ['Draconic visage'], source: ['name=Draconic visage']}
+
+  # ------------------------------------------------------------------ monster stats and weaknesses
+  - id: stats-moss-giant-weakness
+    kind: stats
+    q: What is a moss giant weak to?
+    gold:
+      - {page: Moss giant, section: '^$', has: ['(?i)weakness\w*:?\s*fire|vulnerable to fire'], source: ['elementalweaknesstype\s*=\s*Fire']}
+    notes: the weakness is in the infobox and the lead; the drop table must not outrank them
+  - id: stats-zulrah-weakness
+    kind: stats
+    q: What is Zulrah's elemental weakness?
+    gold:
+      - {page: Zulrah, section: '^$', has: ['(?i)weakness\w*:?\s*fire'], source: ['elementalweaknesstype\s*=\s*Fire']}
+  - id: stats-graardor-weakness
+    kind: stats
+    q: What is General Graardor weak to?
+    gold:
+      - {page: General Graardor, section: '^$', has: ['(?i)weakness\w*:?\s*earth'], source: ['elementalweaknesstype\s*=\s*Earth']}
+  - id: stats-vorkath-weakness
+    kind: stats
+    q: Is Vorkath weak to fire spells?
+    gold:
+      - {page: Vorkath, section: '^$', has: ['(?i)weakness\w*:?\s*fire'], source: ['elementalweaknesstype\s*=\s*Fire']}
+  - id: stats-zulrah-hitpoints
+    kind: stats
+    q: How many hitpoints does Zulrah have?
+    gold:
+      - {page: Zulrah, section: '^$', has: ['(?i)hitpoints:?\s*500'], source: ['hitpoints\s*=\s*500']}
+  - id: stats-abyssal-demon-slayer-level
+    kind: stats
+    q: What Slayer level do I need to kill abyssal demons?
+    gold:
+      - {page: Abyssal demon, section: '^$', has: ['\b85\b'], source: ['slaylvl\s*=\s*85']}
+  - id: stats-gargoyle-slayer-xp
+    kind: stats
+    q: How much Slayer XP does a gargoyle give?
+    gold:
+      - {page: Gargoyle, section: '^$', has: ['\b105\b'], source: ['slayxp\s*=\s*105']}
+  - id: stats-moss-giant-respawn
+    kind: stats
+    q: How long does a moss giant take to respawn?
+    gold:
+      - {page: Moss giant, section: '^$', has: ['(?i)respawn\w*:?\s*30'], source: ['respawn\s*=\s*30']}
+  - id: stats-green-dragon-max-hit
+    kind: stats
+    q: What is the max hit of a green dragon?
+    gold:
+      - {page: Green dragon, section: '^$', has: ['(?i)max hit:?\s*8'], source: ['max hit']}
+  - id: stats-corp-weakness
+    kind: stats
+    q: What is the Corporeal Beast weak to?
+    gold:
+      - {page: Corporeal Beast, has: ['(?i)weakness\w*:?\s*earth|spear|halberd'], source: ['elementalweaknesstype\s*=\s*Earth']}
+
+  # ------------------------------------------------------------------ items
+  - id: item-whip-attack-requirement
+    kind: items
+    q: What Attack level do I need to wield an abyssal whip?
+    gold:
+      - {page: Abyssal whip, section: '^$', has: ['Attack level of 70'], source: ['Attack\]\] level of 70']}
+  - id: item-whip-bonuses
+    kind: items
+    q: What are the combat stats of the abyssal whip?
+    gold:
+      - {page: Abyssal whip, has: ['slash \+82'], source: ['aslash\s*=\s*\+82']}
+  - id: item-whip-special-attack
+    kind: items
+    q: What does the abyssal whip special attack do?
+    gold:
+      - {page: Abyssal whip, has: ['Energy Drain'], source: ['Energy Drain']}
+  - id: item-abyssal-tentacle
+    kind: items
+    q: How do I make an abyssal tentacle?
+    gold:
+      - {page: Abyssal tentacle, has: ['kraken tentacle'], source: ['kraken tentacle']}
+      - {page: Abyssal whip, has: ['kraken tentacle'], source: ['kraken tentacle']}
+  - id: item-ring-of-dueling
+    kind: items
+    q: How do I make a ring of dueling?
+    gold:
+      - {page: Ring of dueling, has: ['(?i)emerald ring'], source: ['(?i)emerald ring']}
+  - id: item-ranging-potion
+    kind: items
+    q: How do I make a ranging potion?
+    gold:
+      - {page: Ranging potion, has: ['(?i)wine of Zamorak'], source: ['(?i)wine of Zamorak']}
+  - id: item-dragon-scimitar
+    kind: items
+    q: What do I need to wield a dragon scimitar?
+    gold:
+      - {page: Dragon scimitar, has: ['60 Attack'], source: ['60 \[\[Attack\]\]']}
+  - id: item-air-rune-pure-essence
+    kind: items
+    q: Can I craft air runes from pure essence?
+    gold:
+      - {page: Air rune, has: ['Pure essence'], source: ['mat1 = Pure essence']}
+    notes: the recipes sit inside a tab group
+  - id: item-adamant-cannonball
+    kind: items
+    q: What Smithing level do I need to make adamant cannonballs?
+    gold:
+      - {page: Adamant cannonball, has: ['75 Smithing'], source: ['skill1lvl = 75']}
+    notes: the recipes sit inside a tab group
+  - id: item-berserker-ring
+    kind: items
+    q: What does the berserker ring do?
+    gold:
+      - {page: Berserker ring, has: ['(?i)strength bonus'], source: ['strength bonus']}
+  - id: item-runite-ore
+    kind: items
+    q: What Mining level do I need to mine runite ore?
+    gold:
+      - {page: Runite ore, has: ['level 85'], source: ['level 85']}
+  - id: item-amethyst
+    kind: items
+    q: Where can I mine amethyst?
+    gold:
+      - {page: Amethyst, has: ['Mining Guild'], source: ['Mining Guild']}
+
+  # ------------------------------------------------------------------ quests
+  - id: quest-mm2-requirements
+    kind: quests
+    q: What are the requirements for Monkey Madness II?
+    gold:
+      - {page: Monkey Madness II, section: '^Details', has: ['Monkey Madness I'], source: ['Monkey Madness I']}
+  - id: quest-ds2-rewards
+    kind: quests
+    q: What do I get for completing Dragon Slayer II?
+    gold:
+      - {page: Dragon Slayer II, section: '^Rewards', has: ['(?i)quest point'], source: ['qp\s*=\s*5']}
+  - id: quest-waterfall-items
+    kind: quests
+    q: What items do I need for the Waterfall Quest?
+    gold:
+      - {page: Waterfall Quest, has: ['(?i)air rune'], source: ['Air rune']}
+  - id: quest-waterfall-no-requirements
+    kind: quests
+    q: Can I do the Waterfall Quest at a low level, with no skill requirements?
+    gold:
+      - {page: Waterfall Quest, has: ['no skill requirements'], source: ['no skill requirements']}
+  - id: quest-ds1-start
+    kind: quests
+    q: Where do I start Dragon Slayer I?
+    gold:
+      - {page: Dragon Slayer I, has: ["Champions' Guild"], source: ["Champions' Guild"]}
+  - id: quest-ds1-quest-points
+    kind: quests
+    q: How many quest points do I need to start Dragon Slayer I?
+    gold:
+      - {page: Dragon Slayer I, has: ['32 quest points'], source: ['Quest\|32']}
+  - id: quest-dt1-ice-diamond
+    kind: quests
+    q: How do I get the ice diamond in Desert Treasure?
+    gold:
+      - {page: Desert Treasure I, section: '(?i)ice diamond', has: ['(?i)ice diamond'], source: ['==Ice diamond==']}
+  - id: quest-legends-quest-points
+    kind: quests
+    q: How many quest points do I need for Legends' Quest?
+    gold:
+      - {page: "Legends' Quest", has: ['107 quest points'], source: ['Quest\|107']}
+  - id: quest-mm2-kruk
+    kind: quests
+    q: How do I defeat Kruk in Monkey Madness II?
+    gold:
+      - {page: Monkey Madness II, section: 'Kruk', has: ['Kruk'], source: ['Kruk']}
+  - id: quest-rfd-subquests
+    kind: quests
+    q: Which subquests are part of Recipe for Disaster?
+    gold:
+      - {page: Recipe for Disaster, has: ['Pirate Pete'], source: ['Pirate Pete']}
+
+  # ------------------------------------------------------------------ skills, mechanics, locations
+  - id: skill-agility-training
+    kind: skills
+    q: What is the fastest way to train Agility?
+    gold:
+      - {page: Agility training, source: ['(?i)agility']}
+  - id: skill-prayer-training
+    kind: skills
+    q: What is the best way to train Prayer?
+    gold:
+      - {page_re: 'Prayer training$', has: ['(?i)bones'], source: ['(?i)bones']}
+  - id: mech-grand-exchange-tax
+    kind: mechanics
+    q: How does the Grand Exchange tax work?
+    gold:
+      - {page: Grand Exchange, has: ['(?i)tax'], source: ['(?i)tax']}
+  - id: mech-special-attack-regeneration
+    kind: mechanics
+    q: How fast does special attack energy regenerate?
+    gold:
+      - {page: Special attacks, has: ['(?i)regenerat'], source: ['regenerat']}
+  - id: mech-items-kept-on-death
+    kind: mechanics
+    q: How many items do I keep when I die?
+    gold:
+      - {page: Items Kept on Death, has: ['three most valuable'], source: ['three most valuable']}
+  - id: mech-ironman-trading
+    kind: mechanics
+    q: Can ironmen trade with other players?
+    gold:
+      - {page: Ironman Mode, has: ['(?i)trad'], source: ['(?i)trad']}
+  - id: mech-protect-from-melee
+    kind: mechanics
+    q: What does Protect from Melee do?
+    gold:
+      - {page: Protect from Melee, has: ['100%'], source: ['100%']}
+  - id: mech-slayer-helmet
+    kind: mechanics
+    q: What bonuses does the Slayer helmet give on task?
+    gold:
+      - {page: Slayer helmet, has: ['16.67%'], source: ['16.67%']}
+  - id: loc-mining-guild
+    kind: locations
+    q: Where is the Mining Guild?
+    gold:
+      - {page: Mining Guild, has: ['Falador'], source: ['Falador']}
+  - id: loc-brimhaven-monsters
+    kind: locations
+    q: Which monsters can I fight in the Brimhaven Dungeon?
+    gold:
+      - {page: Brimhaven Dungeon, section: '^Monsters', has: ['Moss giant', 'Fire giant'], source: ['Moss giant', 'Fire giant']}
+    notes: a short section that must keep its own label, not hide inside "Transportation"
+  - id: loc-fairy-ring-mudskipper
+    kind: locations
+    q: What is the fairy ring code for Mudskipper Point?
+    gold:
+      - {page: Fairy ring, has: ['(?i)aiq'], source: ['(?i)aiq']}
+
+  # ------------------------------------------------------------------ clue scrolls
+  - id: clue-anagram-an-earl
+    kind: clues
+    q: How do I solve the beginner anagram clue AN EARL?
+    gold:
+      - {page: 'Clue scroll (beginner) - AN EARL', has: ['Ranael'], source: ['Ranael']}
+  - id: clue-dig-giants-den
+    kind: clues
+    q: Where do I dig for the clue "Dig by the Giant's Den entrance, looking out over Lake Molch"?
+    gold:
+      - {page: "Clue scroll (easy) - Dig by the Giant's Den entrance", has: ['Lake Molch'], source: ['Lake Molch']}
+  - id: clue-belladonna
+    kind: clues
+    q: What do I do for the easy clue "Belladonna, my dear. If only I had gloves, then I could hold you at last"?
+    gold:
+      - {page: 'Clue scroll (easy) - Belladonna, my dear If only I had gloves', has: ['(?i)tool leprechaun'], source: ['(?i)tool leprechaun']}
+      - {page: 'Treasure Trails/Guide/Cryptic clues/Easy', has: ['(?i)tool leprechaun'], source: ['(?i)tool leprechaun']}
+  - id: clue-coordinates
+    kind: clues
+    q: Where do I dig for the coordinate clue 00 degrees 35 minutes north, 35 degrees 50 minutes east?
+    gold:
+      - {page: 'Treasure Trails/Guide/Coordinates/Elite', has: ['Meiyerditch'], source: ['Meiyerditch']}
+
+  # ------------------------------------------------------------------ boss strategies
+  - id: strat-vorkath-gear
+    kind: strategies
+    q: What gear should I use to kill Vorkath?
+    gold:
+      - {page: Vorkath/Strategies, has: ['(?i)dragon hunter crossbow'], source: ['Dragon hunter crossbow']}
+  - id: strat-vorkath-inventory
+    kind: strategies
+    q: What should I bring in my inventory for Vorkath?
+    gold:
+      - {page: Vorkath/Strategies, has: ['Inventory:'], source: ['\{\{Inventory']}
+  - id: strat-vorkath-woox-walk
+    kind: strategies
+    q: What is the Woox walk at Vorkath?
+    gold:
+      - {page: Vorkath/Strategies, has: ['Woox'], source: ['Woox']}
+  - id: strat-corp-weapons
+    kind: strategies
+    q: What weapons work best against the Corporeal Beast?
+    gold:
+      - {page: Corporeal Beast/Strategies, has: ['(?i)spear|halberd'], source: ['(?i)spear|halberd']}
+  - id: strat-graardor
+    kind: strategies
+    q: How do I kill General Graardor?
+    gold:
+      - {page: General Graardor/Strategies, source: ['Graardor']}
+  - id: strat-zulrah-rotations
+    kind: strategies
+    q: How do the Zulrah phases and rotations work?
+    gold:
+      - {page: Zulrah/Strategies, has: ['(?i)rotation'], source: ['(?i)rotation']}
+
+  # ------------------------------------------------------------------ diaries and money making
+  - id: diary-ardougne-hard
+    kind: diaries
+    q: What are the tasks of the Ardougne hard diary?
+    gold:
+      - {page: Ardougne Diary, section: '^Hard', source: ['==Hard==']}
+  - id: diary-falador-elite
+    kind: diaries
+    q: What do I need for the Falador elite diary?
+    gold:
+      - {page: Falador Diary, section: '^Elite|^Requirements', source: ['Elite']}
+  - id: mmg-farming-torstol
+    kind: money_making
+    q: How do I make money farming torstol?
+    gold:
+      - {page: Money making guide/Farming torstol, source: ['(?i)torstol']}

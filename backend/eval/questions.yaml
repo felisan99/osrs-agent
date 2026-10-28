@@ -1,0 +1,553 @@
+# Evaluation set (SPEC §12). Used by eval/run_eval.py (M8) and by the M4 retrieval check.
+#
+# Per case:
+#   id, lang, question
+#   query_en          hand-written English rewrite of a Spanish question: what a perfect rewrite
+#                     step would produce (measures retrieval apart from the rewriting LLM)
+#   intent_esperado   one of app.graph.intents.Intent
+#   profile | player_state   optional player snapshot (profiles below, or inline, SPEC §5)
+#   history           prior turns [{role, content}] for follow-up questions
+#   corpus            answerable | unanswerable | n/a   (is the answer in the ingested wiki?)
+#   gold_pages        exact wiki page titles that hold the answer (passage recall)
+#   evidence          substrings; at least one must appear in the retained passages
+#   behavior          answer | no_evidence | clarify | refuse   (what the reply must do; judged by Jev)
+#   expected_facts    all must appear in the answer (case-insensitive; "a|b" = either spelling)
+#   avoid_facts       none may appear in the answer
+#   avoid_patterns    regexes none may match (numbers that must not be invented)
+#   tools_expected    tools the agent must call (names from app.tools.registry)
+#   notes             why the case exists
+#
+# Gold labels were checked against the loaded corpus on 2026-10-14 (run_eval.py --check-gold).
+
+version: 1
+
+profiles:
+  main_midgame:
+    account_type: main
+    members: true
+    skills: {attack: 75, defence: 70, strength: 75, hitpoints: 78, ranged: 80, prayer: 70, magic: 75, cooking: 70, woodcutting: 60, fletching: 70, fishing: 70, firemaking: 60, crafting: 62, smithing: 60, mining: 60, herblore: 60, agility: 56, thieving: 56, slayer: 72, farming: 55, runecraft: 50, hunter: 60, construction: 55, sailing: 1}
+    quests:
+      "Monkey Madness I": FINISHED
+      "Recipe for Disaster": IN_PROGRESS
+      "Desert Treasure I": FINISHED
+      "Dragon Slayer I": FINISHED
+      "Legends' Quest": NOT_STARTED
+      "Enlightened Journey": FINISHED
+      "The Eyes of Glouphrie": NOT_STARTED
+      "Troll Stronghold": FINISHED
+      "Death Plateau": FINISHED
+      "Watchtower": FINISHED
+      "The Grand Tree": FINISHED
+      "Tree Gnome Village": FINISHED
+      "Monkey Madness II": NOT_STARTED
+    gp: 6500000
+    inventory: [{id: 995, qty: 6500000}]
+    bank: {captured_at: null, items: []}
+    captured_at: "2026-10-14T12:00:00Z"
+  main_endgame:
+    account_type: main
+    members: true
+    skills: {attack: 99, defence: 99, strength: 99, hitpoints: 99, ranged: 99, prayer: 99, magic: 99, cooking: 99, woodcutting: 99, fletching: 99, fishing: 99, firemaking: 99, crafting: 99, smithing: 99, mining: 99, herblore: 99, agility: 99, thieving: 99, slayer: 99, farming: 99, runecraft: 99, hunter: 99, construction: 99, sailing: 60}
+    quests:
+      "Dragon Slayer II": FINISHED
+      "Monkey Madness II": FINISHED
+      "Desert Treasure II - The Fallen Empire": FINISHED
+      "Recipe for Disaster": FINISHED
+    gp: 400000000
+    inventory: []
+    bank: {captured_at: "2026-10-14T11:50:00Z", items: [{id: 995, qty: 400000000}]}
+    captured_at: "2026-10-14T12:00:00Z"
+  ironman_early:
+    account_type: ironman
+    members: true
+    skills: {attack: 45, defence: 40, strength: 45, hitpoints: 50, ranged: 40, prayer: 30, magic: 45, cooking: 40, woodcutting: 40, fletching: 30, fishing: 40, firemaking: 40, crafting: 30, smithing: 30, mining: 40, herblore: 20, agility: 25, thieving: 30, slayer: 30, farming: 30, runecraft: 20, hunter: 20, construction: 20, sailing: 1}
+    quests:
+      "Cook's Assistant": FINISHED
+      "Dragon Slayer I": NOT_STARTED
+    gp: 120000
+    inventory: []
+    bank: {captured_at: null, items: []}
+    captured_at: "2026-10-14T12:00:00Z"
+  f2p_low:
+    account_type: main
+    members: false
+    skills: {attack: 40, defence: 35, strength: 40, hitpoints: 45, ranged: 30, prayer: 20, magic: 35, cooking: 35, woodcutting: 40, fletching: 20, fishing: 35, firemaking: 35, crafting: 25, smithing: 30, mining: 35, herblore: 1, agility: 1, thieving: 25, slayer: 1, farming: 1, runecraft: 20, hunter: 1, construction: 1, sailing: 1}
+    quests: {}
+    gp: 50000
+    inventory: []
+    bank: {captured_at: null, items: []}
+    captured_at: "2026-10-14T12:00:00Z"
+
+cases:
+  # ------------------------------------------------------------------ wiki knowledge
+  - id: wiki-whip-attack-en
+    lang: en
+    question: "What Attack level do I need to wield an abyssal whip?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Abyssal whip"]
+    evidence: ["Attack level of 70"]
+    behavior: answer
+    expected_facts: ["70"]
+
+  - id: wiki-dragon-bones-xp-es
+    lang: es
+    question: "¿Cuánta experiencia de Prayer da enterrar un hueso de dragón?"
+    query_en: "How much Prayer experience do dragon bones give when buried?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Dragon bones"]
+    evidence: ["72 Prayer experience"]
+    behavior: answer
+    expected_facts: ["72"]
+    notes: Spanish question over English passages; item name must stay "Dragon bones".
+
+  - id: wiki-prayer-fastest-en
+    lang: en
+    question: "What's the fastest way to train Prayer as a member?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Pay-to-play Prayer training"]
+    evidence: ["gilded altar"]
+    behavior: answer
+    expected_facts: ["gilded altar"]
+
+  - id: wiki-zulrah-combat-en
+    lang: en
+    question: "What is Zulrah's combat level?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Zulrah"]
+    evidence: ["Combat level: 725"]
+    behavior: answer
+    expected_facts: ["725"]
+
+  - id: wiki-gargoyle-slayer-es
+    lang: es
+    question: "¿Qué nivel de Slayer necesito para matar gárgolas?"
+    query_en: "What Slayer level is needed to kill gargoyles?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Gargoyle"]
+    evidence: ["75 Slayer"]
+    behavior: answer
+    expected_facts: ["75"]
+    notes: '"gárgolas" is Spanish for the wiki page "Gargoyle".'
+
+  - id: wiki-ge-tax-en
+    lang: en
+    question: "How does the Grand Exchange tax work?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Grand Exchange"]
+    evidence: ["2% tax"]
+    behavior: answer
+    expected_facts: ["2%", "5 million|5,000,000|5m"]
+    # The old rate may be mentioned as history ("was 1% until 29 May 2025": the page says so and an
+    # answer that does is right); what must not happen is presenting a wrong rate as the current one.
+    avoid_patterns: ["(?i)\\b(?:is|are|currently|now|of)\\s+(?:a\\s+)?1\\s?%", "(?<![\\d.])5\\s?%"]
+
+  - id: wiki-barrows-location-es
+    lang: es
+    question: "¿Dónde queda el Barrows y qué es?"
+    query_en: "Where is Barrows located and what is it?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Barrows"]
+    evidence: ["east of Mort'ton"]
+    behavior: answer
+    expected_facts: ["Mort'ton"]
+
+  - id: wiki-ancient-magicks-en
+    lang: en
+    question: "How do I unlock the Ancient Magicks spellbook?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Ancient Magicks"]
+    evidence: ["Desert Treasure I"]
+    behavior: answer
+    expected_facts: ["Desert Treasure"]
+
+  - id: wiki-raids-list-en
+    lang: en
+    question: "What raids are there in Old School RuneScape?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Raids"]
+    evidence: ["Theatre of Blood"]
+    behavior: answer
+    expected_facts: ["Chambers of Xeric", "Theatre of Blood", "Tombs of Amascut"]
+
+  - id: wiki-nieve-requirement-es
+    lang: es
+    question: "¿Qué combat level necesito para que Nieve me dé tareas de Slayer?"
+    query_en: "What combat level is required to get Slayer tasks from Nieve?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Nieve"]
+    evidence: ["combat level of at least 85"]
+    behavior: answer
+    expected_facts: ["85"]
+
+  - id: wiki-thrall-best-en
+    lang: en
+    question: "Which thrall spell is best for bossing?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Thrall"]
+    evidence: ["Resurrect Greater Ghost"]
+    behavior: answer
+    expected_facts: ["Greater"]
+    notes: The Arceuus spellbook's thralls are the OSRS necromancy-flavoured spells (an earlier version
+      of the set asked about "Necromancy" and expected no evidence; the wiki does answer that wording).
+
+  - id: wiki-dscim-with-state-en
+    lang: en
+    profile: main_midgame
+    question: "Can I wield a dragon scimitar?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Dragon scimitar"]
+    evidence: ["Monkey Madness I"]
+    behavior: answer
+    expected_facts: ["Monkey Madness I", "60"]
+    notes: The answer depends on the player (Attack 75, Monkey Madness I finished) -> yes.
+
+  # ------------------------------------------------------------------ quests
+  - id: quest-mm2-skill-reqs-en
+    lang: en
+    question: "What are the skill requirements for Monkey Madness II?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Monkey Madness II"]
+    evidence: ["69 Slayer"]
+    behavior: answer
+    expected_facts: ["69", "Slayer", "70", "Crafting", "60", "Hunter", "Firemaking"]
+
+  - id: quest-cooks-start-es
+    lang: es
+    question: "¿Cómo empiezo la quest Cook's Assistant?"
+    query_en: "How do I start the quest Cook's Assistant?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Cook's Assistant"]
+    evidence: ["Talk to the Cook in the kitchen of Lumbridge Castle"]
+    behavior: answer
+    expected_facts: ["Cook", "Lumbridge"]
+
+  - id: quest-cooks-items-es
+    lang: es
+    question: "¿Qué ítems necesito para Cook's Assistant?"
+    query_en: "What items are needed for Cook's Assistant?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Cook's Assistant"]
+    evidence: ["Bucket of milk"]
+    behavior: answer
+    expected_facts: ["Egg", "Bucket of milk", "Pot of flour"]
+
+  - id: quest-ds2-reqs-en
+    lang: en
+    question: "What do I need before I can start Dragon Slayer II?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Dragon Slayer II"]
+    evidence: ["200 quest points"]
+    behavior: answer
+    expected_facts: ["200 quest points", "Legends' Quest", "75 Magic"]
+
+  - id: quest-mm2-eligibility-es
+    lang: es
+    profile: main_midgame
+    question: "¿Puedo hacer Monkey Madness II ya? ¿Qué me falta?"
+    query_en: "What are the requirements for Monkey Madness II?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Monkey Madness II"]
+    evidence: ["70 Crafting"]
+    behavior: answer
+    expected_facts: ["Crafting", "70", "The Eyes of Glouphrie", "Recipe for Disaster"]
+    avoid_facts: ["Slayer 69 te falta", "te falta Slayer"]
+    notes: Deterministic requirement check. Missing -> Crafting 70 (has 62), The Eyes of Glouphrie, Recipe for Disaster (in progress).
+
+  - id: quest-dt2-eligibility-ironman-en
+    lang: en
+    profile: ironman_early
+    question: "Can I do Desert Treasure II yet?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Desert Treasure II - The Fallen Empire"]
+    evidence: ["Desert Treasure I"]
+    behavior: answer
+    expected_facts: ["Desert Treasure I"]
+    notes: A low-level ironman misses nearly everything; the reply must list what is missing, not guess.
+
+  # ------------------------------------------------------------------ moneymaking
+  - id: mm-ranking-main-en
+    lang: en
+    profile: main_midgame
+    question: "What's a good way to make money with my stats?"
+    intent_esperado: moneymaking
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_moneymakers]
+    notes: Numbers must come from rank_moneymakers and carry the price timestamp.
+
+  - id: mm-ironman-es
+    lang: es
+    profile: ironman_early
+    question: "¿Cuál es la mejor forma de ganar GP por hora?"
+    intent_esperado: moneymaking
+    corpus: n/a
+    behavior: answer
+    expected_facts: ["ironman"]
+    avoid_patterns: ["(?i)\\d[\\d.,]*\\s*[km]?\\s*gp\\s*(/|por|per)\\s*(h|hr|hora|hour)"]
+    notes: Ironmen cannot use GE-priced profit; no GP/hour figures may be invented (user decision).
+
+  - id: mm-f2p-en
+    lang: en
+    profile: f2p_low
+    question: "I'm free to play with low levels, how can I make some money?"
+    intent_esperado: moneymaking
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_moneymakers]
+    notes: Only free-to-play guides may be suggested.
+
+  - id: mm-endgame-es
+    lang: es
+    profile: main_endgame
+    question: "Ya tengo casi todo, ¿qué moneymaker de alto nivel me conviene?"
+    intent_esperado: moneymaking
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_moneymakers]
+
+  - id: mm-zulrah-details-en
+    lang: en
+    question: "How do I make money killing Zulrah and what do I need to bring?"
+    intent_esperado: moneymaking
+    corpus: answerable
+    gold_pages: ["Money making guide/Killing Zulrah", "Money making guide/Killing Zulrah (max efficiency)"]
+    evidence: ["Zul-andra teleport"]
+    behavior: answer
+    expected_facts: ["Zulrah"]
+
+  # ------------------------------------------------------------------ flipping and prices
+  - id: flip-ranking-en
+    lang: en
+    question: "What's a good item to flip with 10M gp?"
+    intent_esperado: flipping
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_flips]
+
+  - id: flip-dragon-bones-es
+    lang: es
+    question: "¿Me conviene flipear dragon bones?"
+    intent_esperado: flipping
+    corpus: n/a
+    behavior: answer
+    # "is X worth flipping?" is what analyze_flip (history-based verdict) is for; it was calc_flip
+    # before that tool existed
+    tools_expected: [analyze_flip]
+
+  - id: flip-justified-en
+    lang: en
+    question: "I have 5M gp, which items are worth flipping right now and why?"
+    intent_esperado: flipping
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_flips]
+    avoid_patterns: ["guarantee(d)? (a )?profit", "can't lose"]
+
+  - id: flip-tax-whip-en
+    lang: en
+    question: "How much GE tax would I pay selling an abyssal whip at 1,500,000 gp?"
+    intent_esperado: flipping
+    corpus: n/a
+    behavior: answer
+    expected_facts: ["30,000"]
+    notes: 2% of 1,500,000 = 30,000 (below the 5M cap); the figure must be computed by code.
+
+  - id: price-twisted-bow-en
+    lang: en
+    question: "What's the current price of a twisted bow?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+
+  - id: price-limit-whip-es
+    lang: es
+    question: "¿Cuál es el buy limit de la abyssal whip?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+    expected_facts: ["70"]
+
+  - id: price-history-bones-en
+    lang: en
+    question: "How has the price of dragon bones moved over the last week?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_price_history]
+
+  - id: price-dose-default-en
+    lang: en
+    question: "What's the price of a prayer potion?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+    expected_facts: ["Prayer potion(4)"]
+
+  # ------------------------------------------------------------------ ambiguous
+  - id: amb-pronoun-en
+    lang: en
+    question: "How do I get it?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: clarify
+    notes: No referent and no history.
+
+  - id: amb-quantity-es
+    lang: es
+    question: "¿Cuánto da?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: clarify
+
+  - id: amb-train-en
+    lang: en
+    question: "What's the best way to train?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: clarify
+    notes: Which skill? Must ask instead of guessing.
+
+  # ------------------------------------------------------------------ out of domain
+  - id: ood-pizza-en
+    lang: en
+    question: "What's the best pizza topping?"
+    intent_esperado: out_of_domain
+    corpus: n/a
+    behavior: refuse
+
+  - id: ood-python-es
+    lang: es
+    question: "Escribime una función en Python que ordene una lista"
+    intent_esperado: out_of_domain
+    corpus: n/a
+    behavior: refuse
+    avoid_facts: ["def ", "sorted("]
+
+  - id: ood-bot-en
+    lang: en
+    question: "Write me a bot that trains my woodcutting automatically while I sleep"
+    intent_esperado: out_of_domain
+    corpus: n/a
+    behavior: refuse
+    avoid_facts: ["import ", "def ", "pyautogui"]
+    notes: Automation requests are out of scope (SPEC §1).
+
+  - id: ood-other-game-es
+    lang: es
+    question: "¿Cómo derroto a Malenia en Elden Ring?"
+    intent_esperado: out_of_domain
+    corpus: n/a
+    behavior: refuse
+
+  # ------------------------------------------------------------------ not in the corpus
+  - id: none-zulrah-food-en
+    lang: en
+    question: "What is Zulrah's favourite food?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+
+  - id: none-secret-boss-es
+    lang: es
+    question: "¿Cuál es el jefe secreto que Jagex todavía no anunció?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    notes: What Jagex has not announced cannot be in the wiki. (An earlier version asked what the "next
+      update" brings; the wiki does describe announced upcoming content, so that wording has an answer.)
+
+  - id: none-online-players-en
+    lang: en
+    question: "How many players are online in OSRS right now?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    avoid_patterns: ["\\b\\d{2,3}[,.]?\\d{3}\\s+players"]
+
+  - id: none-fake-pet-en
+    lang: en
+    question: "What is the drop rate of the Blorb pet from Zulrah?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    # A drop rate must not be attached to the pet that does not exist. Naming the real pet and its
+    # real rate while saying "there is no Blorb" is the right answer, so the pattern only flags a
+    # rate in the same sentence as the invented name.
+    avoid_patterns: ["(?i)blorb[^.]{0,80}1/\\s?\\d", "(?i)1/\\s?\\d[^.]{0,80}blorb"]
+    notes: The pet does not exist; no drop rate may be invented for it.
+
+  - id: none-rs3-revolution-en
+    lang: en
+    question: "What is the best Revolution ability bar setup for bossing?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    notes: Revolution and the ability bar are RuneScape 3 combat; the OSRS wiki has no such page.
+
+  - id: none-best-clan-es
+    lang: es
+    question: "¿Cuál es el mejor clan de OSRS para unirme?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+
+  # ------------------------------------------------------------------ multi-turn follow-ups
+  - id: multi-mm2-item-es
+    lang: es
+    history:
+      - {role: user, content: "How do I start Monkey Madness II?"}
+      - {role: assistant, content: "You need Slayer 69, Crafting 70, Hunter 60, Agility 55, Thieving 55 and Firemaking 60, plus Enlightened Journey, The Eyes of Glouphrie, Recipe for Disaster (Freeing King Awowogei), Troll Stronghold and Watchtower. Bring an m'speak amulet, a ninja monkey greegree, a lemon, grapes and a pestle and mortar. Start by talking to King Narnode Shareen in the Gnome Stronghold."}
+    question: "¿y si no tengo el m'speak amulet?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["M'speak amulet"]
+    evidence: ["m'speak amulet"]
+    behavior: answer
+    expected_facts: ["m'speak amulet"]
+    notes: Resolving "el m'speak amulet" needs the previous turn (Monkey Madness II context).
+
+  - id: multi-whip-limit-es
+    lang: es
+    history:
+      - {role: user, content: "¿Cuánto cuesta la abyssal whip?"}
+      - {role: assistant, content: "Según los precios del GE, la abyssal whip se compra al instante a unos 1,5 M gp (dato del 2026-10-14 10:00 UTC)."}
+    question: "¿y cuál es su límite de compra?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+    expected_facts: ["70"]
+
+  - id: multi-prayer-ironman-en
+    lang: en
+    history:
+      - {role: user, content: "What's the fastest way to train Prayer?"}
+      - {role: assistant, content: "Offer bones at a gilded altar in your player-owned house with both incense burners lit."}
+    question: "And what if I'm an ironman?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Ironman Guide/Prayer"]
+    evidence: ["Prayer"]
+    behavior: answer
+    notes: '"I''m an ironman" only makes sense with the Prayer-training topic from the first turn.'

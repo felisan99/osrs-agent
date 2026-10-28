@@ -1,0 +1,153 @@
+# Held-out evaluation set: questions written AFTER the main set was used to tune the router
+# criteria and the prompts, and never used to tune anything. It estimates how well the agent does on
+# questions it has not been adjusted for. Same schema as questions.yaml (see its header).
+#
+#   uv run python -m eval.run_eval --cases eval/heldout.yaml
+
+version: 1
+
+profiles:
+  main_midgame:
+    account_type: main
+    members: true
+    skills: {attack: 75, defence: 70, strength: 75, hitpoints: 78, ranged: 80, prayer: 70, magic: 75, cooking: 70, woodcutting: 60, fletching: 70, fishing: 70, firemaking: 60, crafting: 62, smithing: 60, mining: 60, herblore: 60, agility: 56, thieving: 56, slayer: 72, farming: 55, runecraft: 50, hunter: 60, construction: 55, sailing: 1}
+    quests:
+      "Monkey Madness I": FINISHED
+      "Recipe for Disaster": IN_PROGRESS
+      "Desert Treasure I": FINISHED
+      "Dragon Slayer I": FINISHED
+      "Legends' Quest": NOT_STARTED
+      "Enlightened Journey": FINISHED
+      "The Eyes of Glouphrie": NOT_STARTED
+      "Troll Stronghold": FINISHED
+      "Death Plateau": FINISHED
+      "Watchtower": FINISHED
+      "The Grand Tree": FINISHED
+      "Tree Gnome Village": FINISHED
+      "Monkey Madness II": NOT_STARTED
+    gp: 6500000
+    inventory: [{id: 995, qty: 6500000}]
+    bank: {captured_at: null, items: []}
+    captured_at: "2026-10-14T12:00:00Z"
+
+cases:
+  - id: ho-hla-level-en
+    lang: en
+    question: "What Magic level do I need to cast High Level Alchemy?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["High Level Alchemy"]
+    evidence: ["requires level 55 Magic"]
+    behavior: answer
+    expected_facts: ["55"]
+
+  - id: ho-hla-xp-es
+    lang: es
+    question: "¿Cuánta experiencia de Magic da High Level Alchemy?"
+    query_en: "How much Magic experience does High Level Alchemy give?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["High Level Alchemy"]
+    evidence: ["65 Magic experience"]
+    behavior: answer
+    expected_facts: ["65"]
+
+  - id: ho-sote-prereq-en
+    lang: en
+    question: "Which quests do I need to finish before Song of the Elves?"
+    intent_esperado: quest
+    corpus: answerable
+    gold_pages: ["Song of the Elves"]
+    evidence: ["Mourning's End Part II"]
+    behavior: answer
+    expected_facts: ["Mourning's End Part II"]
+
+  - id: ho-fairy-quest-es
+    lang: es
+    question: "¿Qué quest necesito para usar los fairy rings?"
+    query_en: "Which quest is needed to use the fairy rings?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Fairy ring"]
+    evidence: ["Cure a Queen"]
+    behavior: answer
+    expected_facts: ["Cure a Queen"]
+
+  - id: ho-looting-bag-en
+    lang: en
+    question: "What is the looting bag used for?"
+    intent_esperado: wiki_general
+    corpus: answerable
+    gold_pages: ["Looting bag"]
+    evidence: ["Wilderness"]
+    behavior: answer
+    expected_facts: ["Wilderness"]
+
+  - id: ho-price-ags-en
+    lang: en
+    question: "What's the price of an Armadyl godsword?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+    expected_facts: ["Armadyl godsword"]
+
+  - id: ho-flip-fury-es
+    lang: es
+    question: "¿Vale la pena flipear amulet of fury?"
+    intent_esperado: flipping
+    corpus: n/a
+    behavior: answer
+    tools_expected: [calc_flip]
+
+  - id: ho-mm-blue-dragons-en
+    lang: en
+    profile: main_midgame
+    question: "How much GP per hour can I make killing blue dragons?"
+    intent_esperado: moneymaking
+    corpus: n/a
+    behavior: answer
+    tools_expected: [rank_moneymakers]
+    expected_facts: ["blue dragon"]
+
+  - id: ho-ood-weather-es
+    lang: es
+    question: "¿Qué tiempo hace hoy en Buenos Aires?"
+    intent_esperado: out_of_domain
+    corpus: n/a
+    behavior: refuse
+
+  - id: ho-none-fake-boss-en
+    lang: en
+    question: "How do I defeat the boss Gorthak the Unbreakable?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    notes: An invented boss.
+
+  - id: ho-none-invention-es
+    lang: es
+    question: "¿Qué nivel necesito en Invention para fabricar un Augmentor?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: no_evidence
+    notes: Invention is a RuneScape 3 skill.
+
+  - id: ho-amb-where-es
+    lang: es
+    question: "¿Dónde queda?"
+    intent_esperado: wiki_general
+    corpus: unanswerable
+    behavior: clarify
+
+  - id: ho-multi-price-es
+    lang: es
+    history:
+      - {role: user, content: "What's the price of an abyssal whip?"}
+      - {role: assistant, content: "An abyssal whip costs about 786,000 gp to buy now (prices from 2026-10-14 10:00 UTC)."}
+    question: "¿y la de la dragon scimitar?"
+    intent_esperado: price_lookup
+    corpus: n/a
+    behavior: answer
+    tools_expected: [get_item_price]
+    expected_facts: ["Dragon scimitar"]
