@@ -1,0 +1,33 @@
+# secrets / local env
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# data produced by ingestion / eval (large or run-specific)
+backend/data/
+backend/eval/reports/
+
+# supabase local
+supabase/.branches/
+supabase/.temp/
+
+# java / gradle / IDE
+plugin/.gradle/
+plugin/build/
+.gradle/
+build/
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+*.log

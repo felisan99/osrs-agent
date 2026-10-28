@@ -1,0 +1,26 @@
+OSRS Agent
+==========
+
+Third-party content
+-------------------
+
+This project retrieves, chunks and displays text from the Old School RuneScape Wiki
+(https://oldschool.runescape.wiki), whose content is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 license (CC BY-NC-SA 3.0):
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+  * Attribution: every answer cites the wiki pages it used (title and URL).
+  * NonCommercial: the wiki text, and any database or index derived from it, may not be used
+    commercially.
+  * ShareAlike: derivative works of the wiki text must be distributed under the same license.
+  * Changes: wikitext is converted to plain text, split into chunks and embedded as vectors.
+
+Live Grand Exchange prices come from the OSRS Wiki real-time prices API
+(https://prices.runescape.wiki), used with a descriptive User-Agent as that service requires.
+
+Trademarks
+----------
+
+"RuneScape" and "Old School RuneScape" are trademarks of Jagex Ltd. This project is not affiliated
+with, endorsed by, or sponsored by Jagex. It is purely informational: it reads game state shown to
+the player and never automates any action in the game.
