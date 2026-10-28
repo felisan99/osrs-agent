@@ -1,0 +1,93 @@
+plugins {
+	id 'java'
+}
+
+repositories {
+	mavenLocal()
+	maven {
+		url = 'https://repo.runelite.net'
+		content {
+			includeGroupByRegex("net\\.runelite.*")
+		}
+	}
+	mavenCentral()
+}
+
+def runeLiteVersion = 'latest.release'
+def pluginMainClass = 'com.osrsagent.AgentPluginTest'
+
+dependencies {
+	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
+
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+	testImplementation 'junit:junit:4.13.2'
+	testImplementation 'org.mockito:mockito-core:5.11.0'
+	testImplementation 'com.squareup.okhttp3:mockwebserver:3.14.9' // same OkHttp as the RuneLite client
+	testImplementation group: 'net.runelite', name:'client', version: runeLiteVersion
+	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
+}
+
+group = 'com.osrsagent'
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+	options.release.set(11)
+}
+
+tasks.register('run', JavaExec) {
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = pluginMainClass
+
+	jvmArgs "-ea"
+	if (System.getProperty('os.name').toLowerCase().contains('mac'))
+	{
+		// RuneLite's window code extends com.apple.eawt classes, which java.desktop does not export
+		// to the classpath: without this the client dies in ClientUI.init with an IllegalAccessError
+		// (the RuneLite launcher passes the flag itself; a plain `java`/Gradle run does not).
+		jvmArgs "--add-exports=java.desktop/com.apple.eawt=ALL-UNNAMED"
+	}
+	args "--developer-mode", "--debug"
+}
+
+tasks.register('pluginJar', Jar) {
+	// only this plugin's classes: RuneLite supplies okhttp, gson, guice and slf4j itself. This is
+	// the jar to drop into ~/.runelite/sideloaded-plugins (shadowJar is the whole client, for dev).
+	from sourceSets.main.output
+	group = BasePlugin.BUILD_GROUP
+	archiveFileName.set("osrs-agent.jar")
+}
+
+tasks.register('panelPreview', JavaExec) {
+	// renders the chat panel to PNG files (build/panel-preview) without opening RuneLite
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'com.osrsagent.PanelPreview'
+	jvmArgs "-Djava.awt.headless=true"
+}
+
+tasks.register('shadowJar', Jar) {
+	dependsOn configurations.testRuntimeClasspath
+	manifest {
+		attributes('Main-Class': pluginMainClass, 'Multi-Release': true)
+	}
+
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	from sourceSets.main.output
+	from sourceSets.test.output
+	from {
+		configurations.testRuntimeClasspath.collect { file ->
+			file.isDirectory() ? file : zipTree(file)
+		}
+	}
+
+	exclude 'META-INF/INDEX.LIST'
+	exclude 'META-INF/*.SF'
+	exclude 'META-INF/*.DSA'
+	exclude 'META-INF/*.RSA'
+	exclude '**/module-info.class'
+
+	group = BasePlugin.BUILD_GROUP
+	archiveClassifier.set('shadow')
+	archiveFileName.set("${rootProject.name}-${project.version}-all.jar")
+}
